@@ -1,2 +1,2 @@
 # Libft_fullpower
-Union of every function for other C projects inside libft
+Union of every function from other C projects inside libft
