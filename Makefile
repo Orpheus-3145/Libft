@@ -6,7 +6,7 @@
 #    By: anonymous <anonymous@student.codam.nl>       +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/14 18:27:31 by anonymous     #+#    #+#                  #
-#    Updated: 2022/12/02 23:46:12 by anonymous     ########   odam.nl          #
+#    Updated: 2022/12/03 00:09:50 by anonymous     ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ INCLUDE  := include/
 
 SRCS := $(wildcard $(SRC_DIR)*.c)
 OBJS := $(subst $(SRC_DIR), $(OBJ_DIR), $(SRCS:.c=.o))
-HEADERS :=$(wildcard $(INCLUDE)*.h)
+HEADER :=$(wildcard $(INCLUDE)*.h)
 
 CC  := gcc
 IFLAGS := -I $(INCLUDE)
@@ -34,7 +34,7 @@ RESET = \x1b[0m
 all: $(NAME)
 	@printf "$(GREEN)created archive $(NAME)$(RESET)\n"
 
-$(NAME): $(OBJS) $(HEADERS)
+$(NAME): $(OBJS) $(HEADER)
 	ar $(LFLAGS) $(NAME) $(OBJS)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
@@ -54,9 +54,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-# compila: main.c $(NAME)
-# 	gcc $(IFLAGS) main.c $(NAME) -o main.exe
-# 
-# run: main.exe
-# 	.\main.exe
