@@ -1,2 +1,2 @@
 # Libft_fullpower
-Union of every function from other C projects inside libft
+Implementation of standard C functions and other frequently used, see subject_libft.pdf for info
