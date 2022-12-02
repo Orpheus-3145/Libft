@@ -22,8 +22,8 @@ size_t	print_int(int to_print, char flag)
 	if (! str_int)
 		return (0);
 	if (flag && to_print >= 0)
-		count += ft_putchar(flag);
-	count += ft_putstr(str_int);
+		count += ft_putchar_fd(flag, 1);
+	count += ft_putstr_fd(str_int, 1);
 	free(str_int);
 	return (count);
 }
@@ -36,7 +36,7 @@ size_t	print_uint(unsigned int to_print)
 	str_uint = ft_litoa(to_print);
 	if (! str_uint)
 		return (0);
-	count = ft_putstr(str_uint);
+	count = ft_putstr_fd(str_uint, 1);
 	free(str_uint);
 	return (count);
 }
@@ -53,11 +53,11 @@ size_t	print_hex(unsigned int to_print, int capital, char flag)
 	if (flag && to_print)
 	{
 		if (capital)
-			count += ft_putstr("0X");
+			count += ft_putstr_fd("0X", 1);
 		else
-			count += ft_putstr("0x");
+			count += ft_putstr_fd("0x", 1);
 	}
-	count += ft_putstr(str_hex);
+	count += ft_putstr_fd(str_hex, 1);
 	free(str_hex);
 	return (count);
 }
@@ -66,7 +66,7 @@ size_t	print_str(char *to_print)
 {
 	if (! to_print)
 		to_print = "(null)";
-	return (ft_putstr(to_print));
+	return (ft_putstr_fd(to_print, 1));
 }
 
 size_t	print_ptr(size_t to_print)
@@ -78,8 +78,8 @@ size_t	print_ptr(size_t to_print)
 	str_ptr = ft_xitoa(to_print, 0);
 	if (! str_ptr)
 		return (0);
-	count += ft_putstr("0x");
-	count += ft_putstr(str_ptr);
+	count += ft_putstr_fd("0x", 1);
+	count += ft_putstr_fd(str_ptr, 1);
 	free(str_ptr);
 	return (count);
 }

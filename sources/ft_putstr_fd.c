@@ -15,13 +15,14 @@
 #include<fcntl.h>
 //#include<stdio.h>
 
-void	ft_putstr_fd(char *str, int fd)
+size_t	ft_putstr_fd(char *str, int fd)
 {
 	if (str)
 	{
 		while (*str)
 			ft_putchar_fd(*str++, fd);
 	}
+	return (ft_strlen(str));
 }
 /*
 int main()

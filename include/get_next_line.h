@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/24 20:37:18 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/11/11 23:47:21 by anonymous     ########   odam.nl         */
+/*   Updated: 2022/12/02 23:35:34 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
-# include "libft.h"
+//# include "libft.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42

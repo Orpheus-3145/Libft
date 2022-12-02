@@ -45,9 +45,9 @@ size_t	print_ph(va_list *ptr, char ph, char flag)
 
 	chars_written = 0;
 	if (ph == 'c')
-		chars_written += ft_putchar(va_arg(*ptr, int));
+		chars_written += ft_putchar_fd(va_arg(*ptr, int), 1);
 	else if (ph == '%')
-		chars_written += ft_putchar('%');
+		chars_written += ft_putchar_fd('%', 1);
 	else if (ph == 's')
 		chars_written += print_str(va_arg(*ptr, char *));
 	else if (ph == 'p')
@@ -84,7 +84,7 @@ int	ft_printf(const char *str, ...)
 			cnt += print_ph(&ptr, *str++, flag);
 		}
 		else
-			cnt += ft_putchar(*(str - 1));
+			cnt += ft_putchar_fd(*(str - 1), 1);
 	}
 	va_end(ptr);
 	return (cnt);

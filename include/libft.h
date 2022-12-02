@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/11/11 22:38:42 by anonymous     ########   odam.nl         */
+/*   Updated: 2022/12/02 23:38:07 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,19 +79,25 @@ char	*ft_strtrim(char const *a, char const *b);
 
 char	**ft_split(char const *a, char b);
 
+size_t	ft_nbrlen(size_t nbr, int base);
+
 char	*ft_itoa(int a);
+
+char	*ft_litoa(long a);
+
+char	*ft_xitoa(int a, int capital);
 
 char	*ft_strmapi(char const *a, char (*f)(unsigned int, char));
 
 void	ft_striteri(char *a, void (*f)(unsigned int, char *));
 
-void	ft_putchar_fd(char a, int b);
+size_t	ft_putchar_fd(char a, int b);
 
-void	ft_putstr_fd(char *a, int b);
+size_t	ft_putstr_fd(char *a, int b);
 
-void	ft_putendl_fd(char *a, int b);
+size_t	ft_putendl_fd(char *a, int b);
 
-void	ft_putnbr_fd(int a, int b);
+size_t	ft_putnbr_fd(int a, int b);
 
 t_list	*ft_lstnew(void *content);
 

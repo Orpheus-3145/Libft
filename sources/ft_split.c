@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
-#include<stdlib.h>
-#include<stdio.h>
-#include<string.h>
 #include"libft.h"
 
 static size_t	n_substr(char const *str, char char_split)
@@ -85,19 +81,3 @@ char	**ft_split(char const *str, char split)
 	matrix[index] = 0;
 	return (matrix - n_substr(str, split));
 }
-/*
-int main()
-{
-	//char *stringa = "asdad|dssdsdf|sdfds";
-	//char sep = '|';
-	//printf("token: |%s|\n", strtok("          ", " "));
-	char **mtx = ft_split("          ", ' ');
-	int cnt = 0;
-	if (mtx)
-	{
-		while (cnt < 1)
-			printf("|%s|\n", mtx[cnt++]);
-		return (0);
-	}
-}
-*/

@@ -12,21 +12,6 @@
 
 #include"libft.h"
 
-static size_t	l_nbr(long nbr)
-{
-	size_t	cnt;
-
-	cnt = 0;
-	if (! nbr)
-		return (1);
-	while (nbr != 0)
-	{
-		nbr /= 10;
-		cnt++;
-	}
-	return (cnt);
-}
-
 char	*ft_itoa(int n)
 {
 	char	*str_nbr;
@@ -36,7 +21,7 @@ char	*ft_itoa(int n)
 	l_n = (long) n;
 	if (n < 0)
 		l_n *= -1;
-	n_digits = l_nbr(l_n) + (n < 0);
+	n_digits = ft_nbrlen(l_n, 10) + (n < 0);
 	str_nbr = (char *) malloc(n_digits + 1);
 	if (! str_nbr)
 		return (NULL);

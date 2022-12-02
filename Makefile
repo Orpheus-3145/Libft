@@ -6,7 +6,7 @@
 #    By: anonymous <anonymous@student.codam.nl>       +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/14 18:27:31 by anonymous     #+#    #+#                  #
-#    Updated: 2022/11/12 00:16:08 by anonymous     ########   odam.nl          #
+#    Updated: 2022/12/02 23:46:12 by anonymous     ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,10 +44,12 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 clean:
 	@printf "$(RED)"
 	-rm -f $(OBJS)
+	@printf "$(RESET)"
 
 fclean: clean
 	@printf "$(RED)"
 	-rm -f $(NAME)
+	@printf "$(RESET)"
 
 re: fclean all
 

@@ -10,32 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<fcntl.h>
 #include"libft.h"
-//#include<stdio.h>
 
-void	ft_putendl_fd(char *str, int fd)
+size_t	ft_putendl_fd(char *str, int fd)
 {
+	size_t tot;
+	
+	tot = 0;
 	if (str)
 	{
 		ft_putstr_fd(str, fd);
 		ft_putchar_fd('\n', fd);
+		tot +=1;
 	}
+	return (tot + ft_strlen(str));
 }
-/*
-int main()
-{
-	int fd = open("test.txt", O_RDWR | O_CREAT);
-	printf("%d\n", fd);
-	if (fd == -1)
-		printf("Error!");
-	else
-	{
-		char *str = "Writing with new line.. ";
-		ft_putendl_fd(str, fd);
-		close(fd);
-	}
-	return (0);
-}
-*/
