@@ -6,7 +6,7 @@
 #    By: anonymous <anonymous@student.codam.nl>       +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/14 18:27:31 by anonymous     #+#    #+#                  #
-#    Updated: 2022/12/03 00:36:24 by anonymous     ########   odam.nl          #
+#    Updated: 2022/12/03 02:11:46 by anonymous     ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,10 +34,13 @@ RESET = \x1b[0m
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(HEADER)
+$(NAME): $(OBJ_DIR) $(OBJS) $(HEADER)
 	@ar $(LFLAGS) $(NAME) $(OBJS)
 	@printf "$(GREEN)created archive $(NAME)$(RESET)\n"
 
+$(OBJ_DIR):
+	@mkdir $(OBJ_DIR)
+	
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $^ -o $@
 	@printf "$(BLUE)Created object file $@\n"
