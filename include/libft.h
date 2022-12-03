@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/12/02 23:38:07 by anonymous     ########   odam.nl         */
+/*   Updated: 2022/12/03 01:53:10 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int		ft_memcmp(const void *a, const void *b, size_t c);
 char	*ft_strnstr(const char *a, char *b, size_t c);
 
 int		ft_atoi(const char *a);
+
+long	ft_atol(const char *a);
 
 void	*ft_calloc(size_t a, size_t b);
 
