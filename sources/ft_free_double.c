@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_raise_error.c                                   :+:    :+:            */
+/*   ft_free_double.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/30 05:20:28 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/11 00:14:48 by fra           ########   odam.nl         */
+/*   Created: 2023/02/09 22:18:30 by fra           #+#    #+#                 */
+/*   Updated: 2023/02/09 22:52:06 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_raise_error(char *err_text, void **to_free, int end)
+void	*ft_free_double(void ***to_free, size_t n_arr)
 {
-	write(2, err_text, ft_strlen(err_text));
-	write(2, "\n", 1);
-	if (to_free && ! *to_free)
+	size_t	i;
+
+	i = 0;
+	if (! *to_free)
+		return (NULL);
+	while (i < n_arr)
 	{
-		free(*to_free);
-		*to_free = NULL;
+		free((*to_free)[i]);
+		i++;
 	}
-	if (end)
-		exit(EXIT_FAILURE);
+	free(*to_free);
+	*to_free = NULL;
+	return (NULL);
 }

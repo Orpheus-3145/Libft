@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 01:45:24 by anonymous         #+#    #+#             */
-/*   Updated: 2023/01/18 22:35:23 by fra              ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_split.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: fra <fra@student.42.fr>                      +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/08 01:45:24 by anonymous     #+#    #+#                 */
+/*   Updated: 2023/02/11 00:15:04 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,6 @@ static size_t	len_substr(char const *str, char char_split)
 	return (length);
 }
 
-static void	*free_memory(char **to_free, size_t n_arr)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n_arr)
-		free(to_free[i++]);
-	free(to_free);
-	return (NULL);
-}
-
 char	**ft_split(char const *str, char split)
 {
 	char	**matrix;
@@ -72,7 +61,7 @@ char	**ft_split(char const *str, char split)
 		{
 			sub_str = ft_substr(str, 0, len_substr(str, split));
 			if (! sub_str)
-				return (free_memory(matrix, index));
+				return (ft_free_double((void ***) &matrix, index));
 			matrix[index++] = sub_str;
 			str += ft_strlen(sub_str) - 1;
 		}

@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 05:18:43 by fra           #+#    #+#                 */
-/*   Updated: 2023/01/30 23:11:02 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/11 00:12:32 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ char	*ft_append_char(char to_add, char **str)
 	}
 	tmp[i++] = to_add;
 	tmp[i] = 0;
-	if (*str)
+	if (str)
 		free(*str);
 	*str = tmp;
-	return (tmp);
+	return (*str);
 }

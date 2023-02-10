@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_raise_error.c                                   :+:    :+:            */
+/*   ft_isspace.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/30 05:20:28 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/11 00:14:48 by fra           ########   odam.nl         */
+/*   Created: 2023/02/07 16:58:31 by fra           #+#    #+#                 */
+/*   Updated: 2023/02/08 00:28:51 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_raise_error(char *err_text, void **to_free, int end)
+int	ft_isspace(char c)
 {
-	write(2, err_text, ft_strlen(err_text));
-	write(2, "\n", 1);
-	if (to_free && ! *to_free)
-	{
-		free(*to_free);
-		*to_free = NULL;
-	}
-	if (end)
-		exit(EXIT_FAILURE);
+	return (c == 9 || c == 10 || c == 11 || c == 12 || c == 13 || c == 32);
 }

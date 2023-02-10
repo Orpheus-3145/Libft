@@ -6,9 +6,10 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/01/30 23:08:08 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/11 00:10:24 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -36,6 +37,8 @@ int		ft_isalnum(int a);
 int		ft_isascii(int a);
 
 int		ft_isprint(int a);
+
+int		ft_isspace(char c);
 
 size_t	ft_strlen(const char *str);
 
@@ -67,6 +70,8 @@ int		ft_memcmp(const void *a, const void *b, size_t c);
 
 char	*ft_strnstr(const char *a, char *b, size_t c);
 
+void	*ft_free_double(void ***to_free, size_t n_arr);
+
 int		ft_atoi(const char *a);
 
 long	ft_atol(const char *a);
@@ -89,10 +94,19 @@ void	ft_char_to_bin(char c, int *bin_char, size_t bits);
 
 char	ft_bin_to_char(int *bin_char, size_t bits);
 
+<<<<<<< HEAD
 void	ft_raise_error(char *err_text, void **to_free, int end);
 
 int		ft_pow(int base, int exp);
 
+=======
+int		ft_pow(int base, int exp);
+
+size_t	ft_mod(int a);
+
+void	raise_error(char *err_text, void **to_free, int end);
+
+>>>>>>> ps
 char	*ft_itoa(int a);
 
 char	*ft_litoa(long a);

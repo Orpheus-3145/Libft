@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   ft_mod.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/05 12:00:19 by faru          #+#    #+#                 */
-/*   Updated: 2023/02/11 00:12:39 by fra           ########   odam.nl         */
+/*   Created: 2023/01/27 19:20:26 by faru          #+#    #+#                 */
+/*   Updated: 2023/02/04 19:42:18 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-int	ft_atoi(const char *str)
+size_t	ft_mod(int a)
 {
-	int		sign;
-	int		nbr;
-
-	nbr = 0;
-	sign = 1;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-')
-	{
-		sign = -1;
-		str++;
-	}
-	else if (*str == '+')
-		str++;
-	while (ft_isdigit(*str))
-		nbr = (nbr * 10) + (*str++ - '0');
-	return (nbr * sign);
+	if (a < 0)
+		a *= -1;
+	return (a);
 }
