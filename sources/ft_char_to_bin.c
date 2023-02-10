@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_litoa.c                                         :+:      :+:    :+:   */
+/*   ft_char_to_bin.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 22:33:53 by fra               #+#    #+#             */
-/*   Updated: 2023/01/18 22:33:55 by fra              ###   ########.fr       */
+/*   Created: 2023/01/16 19:25:36 by fra               #+#    #+#             */
+/*   Updated: 2023/01/18 22:36:46 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_litoa(long n)
+void	ft_char_to_bin(char c, int *bin_char, size_t bits)
 {
-	char	*str_nbr;
-	size_t	tmp;
-	size_t	n_digits;
+	char	*base;
 
-	if (n < 0)
-		tmp = n * -1;
-	else
-		tmp = n;
-	n_digits = ft_nbrlen(tmp, 10) + (n < 0);
-	str_nbr = (char *) malloc(n_digits + 1);
-	if (! str_nbr)
-		return (NULL);
-	str_nbr[n_digits--] = '\0';
-	while (tmp != 0)
+	base = "01";
+	while (bits--)
 	{
-		str_nbr[n_digits--] = tmp % 10 + '0';
-		tmp /= 10;
+		bin_char[bits] = base[c % 2] - '0';
+		c /= 2;
 	}
-	if (n < 0)
-		str_nbr[n_digits] = '-';
-	else if (n == 0)
-		str_nbr[n_digits] = '0';
-	return (str_nbr);
 }

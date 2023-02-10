@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   libft.h                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
+/*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/12/03 01:53:10 by anonymous     ########   odam.nl         */
+/*   Updated: 2023/02/09 22:31:14 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+char	*ft_append_char(char to_add, char **str);
+
 int		ft_isalpha(int a);
 
 int		ft_isdigit(int a);
@@ -34,6 +36,8 @@ int		ft_isalnum(int a);
 int		ft_isascii(int a);
 
 int		ft_isprint(int a);
+
+int		ft_isspace(char c);
 
 size_t	ft_strlen(const char *str);
 
@@ -65,6 +69,8 @@ int		ft_memcmp(const void *a, const void *b, size_t c);
 
 char	*ft_strnstr(const char *a, char *b, size_t c);
 
+void	*ft_free_double(void ***to_free, size_t n_arr);
+
 int		ft_atoi(const char *a);
 
 long	ft_atol(const char *a);
@@ -82,6 +88,16 @@ char	*ft_strtrim(char const *a, char const *b);
 char	**ft_split(char const *a, char b);
 
 size_t	ft_nbrlen(size_t nbr, int base);
+
+void	ft_char_to_bin(char c, int *bin_char, size_t bits);
+
+char	ft_bin_to_char(int *bin_char, size_t bits);
+
+int		ft_pow(int base, int exp);
+
+size_t	ft_mod(int a);
+
+void	raise_error(char *err_text, void **to_free, int end);
 
 char	*ft_itoa(int a);
 

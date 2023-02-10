@@ -6,14 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/07 11:00:52 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/21 18:27:02 by faru          ########   odam.nl         */
+/*   Updated: 2023/02/10 00:47:33 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include<stddef.h>
 #include"libft.h"
-// #include<stdio.h>
 
 char	*ft_substr(const char *str, unsigned int start, size_t len)
 {
@@ -36,10 +33,3 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 		return (sub_str);
 	}
 }
-/*
-int main()
-{
-	printf("upd->sub_str: %s\n", ft_substr("", 4, 50));
-	return (0);
-}
-*/
