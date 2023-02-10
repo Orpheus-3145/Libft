@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   get_next_line.c                                    :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/24 20:36:57 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/11/11 23:49:34 by anonymous     ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 20:36:57 by anonymous         #+#    #+#             */
+/*   Updated: 2023/01/18 22:37:28 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ char	*get_next_line(int fd)
 	char			*line;
 	t_crs			*crs;
 	static t_crs	*list_crs;
-	
+
 	if (fd < 0)
 	{
 		free_crs_list(&list_crs);

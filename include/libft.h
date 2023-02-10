@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   libft.h                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
+/*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/12/03 01:53:10 by anonymous     ########   odam.nl         */
+/*   Updated: 2023/01/30 23:08:08 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+char	*ft_append_char(char to_add, char **str);
 
 int		ft_isalpha(int a);
 
@@ -82,6 +84,14 @@ char	*ft_strtrim(char const *a, char const *b);
 char	**ft_split(char const *a, char b);
 
 size_t	ft_nbrlen(size_t nbr, int base);
+
+void	ft_char_to_bin(char c, int *bin_char, size_t bits);
+
+char	ft_bin_to_char(int *bin_char, size_t bits);
+
+void	ft_raise_error(char *err_text, void **to_free, int end);
+
+int		ft_pow(int base, int exp);
 
 char	*ft_itoa(int a);
 

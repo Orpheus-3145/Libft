@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_bin_to_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 16:12:33 by faru              #+#    #+#             */
-/*   Updated: 2023/01/18 22:33:31 by fra              ###   ########.fr       */
+/*   Created: 2023/01/16 20:34:33 by fra               #+#    #+#             */
+/*   Updated: 2023/01/18 22:34:32 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-static int	is_space(char c)
+char	ft_bin_to_char(int *bin_char, size_t bits)
 {
-	return (c == 9 || c == 10 || c == 11 || c == 12 || c == 13 || c == 32);
-}
+	char	c;
+	size_t	i;
 
-long	ft_atol(const char *str)
-{
-	int		sign;
-	size_t	nbr;
-
-	nbr = 0;
-	sign = 1;
-	while (is_space(*str))
-		str++;
-	if (*str == '-')
+	c = 0;
+	i = 0;
+	while (i < bits)
 	{
-		sign = -1;
-		str++;
+		c += ft_pow(2, bits - i - 1) * bin_char[i];
+		i++;
 	}
-	else if (*str == '+')
-		str++;
-	while (ft_isdigit(*str))
-		nbr = (nbr * 10) + (*str++ - '0');
-	return (((long) nbr) * sign);
+	return (c);
 }
