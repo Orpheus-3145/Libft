@@ -1,31 +1,31 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: fra <fra@student.42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/14 18:27:31 by anonymous         #+#    #+#              #
-#    Updated: 2023/01/19 20:27:01 by fra              ###   ########.fr        #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: fra <fra@student.42.fr>                      +#+                      #
+#                                                    +#+                       #
+#    Created: 2022/10/14 18:27:31 by anonymous     #+#    #+#                  #
+#    Updated: 2023/02/11 02:25:37 by fra           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 SHELL := /bin/bash
 
 NAME := libft.a
-MAIN := main
 SRC_DIR := sources/
 OBJ_DIR := objects/
 INCLUDE  := include/
 
-SRCS := $(wildcard $(SRC_DIR)*.c)
-OBJS := $(subst $(SRC_DIR), $(OBJ_DIR), $(SRCS:.c=.o))
-HEADER :=$(wildcard $(INCLUDE)*.h)
+HEADERS :=$(wildcard $(INCLUDE)*.h)
+SOURCES := $(shell find $(SRC_DIR) -type f -name '*.c')
+_OBJECTS := $(SOURCES:.c=.o)
+OBJECTS := $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(_OBJECTS))
 
 CC  := gcc
 IFLAGS := -I $(INCLUDE)
-CFLAGS  := -Wall -Wextra -Werror
-LFLAGS  := -rcs
+CFLAGS := -Wall -Wextra -Werror
+LFLAGS := -rcs
 
 GREEN = \x1b[32;01m
 RED = \x1b[31;01m
@@ -35,23 +35,25 @@ YELLOW = \x1b[33;01m
 
 all: $(NAME)
 
-$(NAME): $(OBJ_DIR) $(OBJS) $(HEADER)
+$(NAME): $(OBJ_DIR) $(OBJECTS) $(HEADERS)
 	@ar $(LFLAGS) $(NAME) $(OBJS)
 	@printf "(libft) $(YELLOW)Created archive $(NAME)$(RESET)\n"
 
 $(OBJ_DIR):
-	@mkdir $(OBJ_DIR)
+	mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $^ -o $@
-	@printf "(libft) $(BLUE)Created object $(subst $(OBJ_DIR),,$@)$(RESET)\n"
+	@printf "(libft) $(BLUE)Created object $@$(RESET)\n"
 
 clean:
-	@-rm -f $(OBJS)
-	@printf "(libft) $(RED)Removing files $(OBJS)$(RESET)\n"
+	@for file in $(OBJECTS); do \
+		rm -f $$file;	\
+		printf "(libft) $(RED)Removing file $$file$(RESET)\n"; \
+	done
 
-
-fclean:
+fclean: clean
 	@-rm -f $(NAME)
 	@printf "(libft) $(RED)Removing $(NAME)$(RESET)\n"
 

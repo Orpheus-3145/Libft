@@ -6,12 +6,10 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 12:16:10 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/13 11:32:34 by faru          ########   odam.nl         */
+/*   Updated: 2023/02/11 01:30:10 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include <stdlib.h>
 #include"libft.h"
 
 void	*ft_calloc(size_t n_ele, size_t size_ele)
@@ -27,16 +25,3 @@ void	*ft_calloc(size_t n_ele, size_t size_ele)
 		*(dyn_ptr + cnt++) = 0;
 	return ((void *) dyn_ptr);
 }
-/*
-int main()
-{
-	char *tst1 = (char *) calloc(3, 0);
-	char *tst2 = (char *) ft_calloc(0, 0);
-	int cnt = 4;
-	while (cnt--)
-		printf("std->%d\n", *tst1++);
-	cnt = 4;
-	while (cnt--)
-		printf("upd->%d\n", *tst2++);
-}
-*/

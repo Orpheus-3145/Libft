@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/02/11 00:10:24 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/11 02:03:29 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-# include "get_next_line.h"
-# include "ft_printf.h"
 
 typedef struct s_list
 {
@@ -94,19 +92,12 @@ void	ft_char_to_bin(char c, int *bin_char, size_t bits);
 
 char	ft_bin_to_char(int *bin_char, size_t bits);
 
-<<<<<<< HEAD
-void	ft_raise_error(char *err_text, void **to_free, int end);
-
-int		ft_pow(int base, int exp);
-
-=======
 int		ft_pow(int base, int exp);
 
 size_t	ft_mod(int a);
 
-void	raise_error(char *err_text, void **to_free, int end);
+void	ft_raise_error(char *err_text, void **to_free_d, void ***to_free_t, size_t n_elems, int end);
 
->>>>>>> ps
 char	*ft_itoa(int a);
 
 char	*ft_litoa(long a);
