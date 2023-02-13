@@ -16,9 +16,9 @@ void	*ft_free_double(void ***to_free, size_t n_arr)
 {
 	size_t	i;
 
-	i = 0;
 	if (! *to_free)
 		return (NULL);
+	i = 0;
 	while (i < n_arr)
 	{
 		free((*to_free)[i]);
