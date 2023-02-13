@@ -20,6 +20,8 @@ char	*ft_strchr(const char *str_to_search, int to_find)
 	unsigned char	uc_to_find;
 
 	uc_to_find = (unsigned char) to_find;
+	if (! str_to_search)
+		return (NULL);
 	while (*str_to_search)
 	{
 		if (*str_to_search == uc_to_find)
