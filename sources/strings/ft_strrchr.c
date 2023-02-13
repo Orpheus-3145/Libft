@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
 #include"libft.h"
-//#include <string.h>
-//#include <stdio.h>
 
 char	*ft_strrchr(const char *str_to_search, int to_find)
 {
@@ -21,6 +18,8 @@ char	*ft_strrchr(const char *str_to_search, int to_find)
 	unsigned char	uc_to_find;
 
 	uc_to_find = (unsigned char) to_find;
+	if (! str_to_search)
+		return (NULL);
 	pos = ft_strlen(str_to_search);
 	if (uc_to_find == 0)
 		return ((char *)(str_to_search + pos));
@@ -31,11 +30,3 @@ char	*ft_strrchr(const char *str_to_search, int to_find)
 	}
 	return (NULL);
 }
-/*
-int main()
-{
-	printf("std->trovato: %s\n", strrchr("dAcAf", 'A'));
-	printf("mia->trovato: %s\n", ft_strrchr("dAcAf", 'A'));
-	return (0);
-}
-*/
