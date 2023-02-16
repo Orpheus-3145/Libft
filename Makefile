@@ -19,8 +19,7 @@ INCLUDE  := include/
 
 HEADERS :=$(wildcard $(INCLUDE)*.h)
 SOURCES := $(shell find $(SRC_DIR) -type f -name '*.c')
-_OBJECTS := $(SOURCES:.c=.o)
-OBJECTS := $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(_OBJECTS))
+OBJECTS := $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SOURCES:.c=.o))
 
 CC  := gcc
 IFLAGS := -I $(INCLUDE)
