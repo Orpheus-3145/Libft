@@ -44,12 +44,12 @@ $(OBJ_DIR):
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $^ -o $@
-	@printf "(libft) $(BLUE)Created object $@$(RESET)\n"
+	@printf "(libft) $(BLUE)Created object $$(basename $@)$(RESET)\n"
 
 clean:
 	@for file in $(OBJECTS); do \
 		rm -f $$file;	\
-		printf "(libft) $(RED)Removed object $$file$(RESET)\n"; \
+		printf "(libft) $(RED)Removed object $$(basename $$file)$(RESET)\n"; \
 	done
 
 fclean: clean
