@@ -35,7 +35,7 @@ YELLOW = \x1b[33;01m
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJECTS) $(HEADERS)
-	@ar $(LFLAGS) $(NAME) $(OBJS)
+	@ar $(LFLAGS) $(NAME) $(OBJECTS)
 	@printf "(libft) $(YELLOW)Created archive $(NAME)$(RESET)\n"
 
 $(OBJ_DIR):
@@ -49,12 +49,12 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 clean:
 	@for file in $(OBJECTS); do \
 		rm -f $$file;	\
-		printf "(libft) $(RED)Removing file $$file$(RESET)\n"; \
+		printf "(libft) $(RED)Removed object $$file$(RESET)\n"; \
 	done
 
 fclean: clean
 	@-rm -f $(NAME)
-	@printf "(libft) $(RED)Removing $(NAME)$(RESET)\n"
+	@printf "(libft) $(RED)Removed archive $(NAME)$(RESET)\n"
 
 re: fclean all
 
