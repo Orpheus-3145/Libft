@@ -6,7 +6,7 @@
 #    By: fra <fra@student.42.fr>                      +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/14 18:27:31 by anonymous     #+#    #+#                  #
-#    Updated: 2023/02/11 23:52:21 by fra           ########   odam.nl          #
+#    Updated: 2023/02/22 23:51:42 by fra           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ clean:
 		printf "(libft) $(RED)Removed object $$(basename $$file)$(RESET)\n"; \
 	done
 
-fclean: clean
+fclean:
 	@-rm -f $(NAME)
 	@printf "(libft) $(RED)Removed archive $(NAME)$(RESET)\n"
 

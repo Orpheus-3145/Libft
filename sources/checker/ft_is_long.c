@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_tolower.c                                       :+:    :+:            */
+/*   ft_is_long.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: faru <faru@student.codam.nl>                 +#+                     */
+/*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/05 11:16:02 by faru          #+#    #+#                 */
-/*   Updated: 2023/02/22 23:57:57 by fra           ########   odam.nl         */
+/*   Created: 2023/02/22 23:55:44 by fra           #+#    #+#                 */
+/*   Updated: 2023/02/22 23:57:11 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-int	ft_tolower(int to_low)
+int	ft_is_long(char *number)
 {
-	return (to_low + ('a' - 'A') * (to_low >= 'A' && to_low <= 'Z'));
+	int	i;
+
+	i = 0;
+	if (number[i] == '+' || number[i] == '-')
+		i++;
+	if (! number[i])
+		return (0);
+	while (number[i])
+	{
+		if (! ft_isdigit(number[i++]))
+			return (0);
+	}
+	return (1);
 }

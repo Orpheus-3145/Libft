@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/02/11 23:51:49 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/22 23:56:23 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ int		ft_isspace(char c);
 int		ft_toupper(int a);
 
 int		ft_tolower(int a);
+
+int		ft_is_int(char *number);
+
+int		ft_is_long(char *number);
 
 size_t	ft_putchar_fd(char a, int b);
 
