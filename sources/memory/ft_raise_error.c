@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 05:20:28 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/23 18:37:45 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/23 22:37:55 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_raise_error(char *text, int end)
 {
-	write(2, text, ft_strlen(text));
-	write(2, "\n", 1);
+	ft_printf("henlo2!");
+	ft_putstr_fd(text, 2);
+	ft_putchar_fd('\n', 2);
 	if (end)
 		exit(EXIT_FAILURE);
 }
