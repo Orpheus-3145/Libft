@@ -6,18 +6,18 @@
 #    By: fra <fra@student.42.fr>                      +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/14 18:27:31 by anonymous     #+#    #+#                  #
-#    Updated: 2023/02/22 23:51:42 by fra           ########   odam.nl          #
+#    Updated: 2023/02/23 19:59:41 by fra           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 SHELL := /bin/bash
 
 NAME := libft.a
-SRC_DIR := sources/
-OBJ_DIR := objects/
-INCLUDE  := include/
+SRC_DIR := sources
+OBJ_DIR := objects
+INCLUDE  := include
 
-HEADERS :=$(wildcard $(INCLUDE)*.h)
+HEADERS := $(shell find $(INCLUDE) -type f -name '*.h')
 SOURCES := $(shell find $(SRC_DIR) -type f -name '*.c')
 OBJECTS := $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SOURCES:.c=.o))
 
@@ -41,13 +41,13 @@ $(NAME): $(OBJ_DIR) $(OBJECTS) $(HEADERS)
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $^ -o $@
 	@printf "(libft) $(BLUE)Created object $$(basename $@)$(RESET)\n"
 
 clean:
-	@for file in $(OBJECTS); do \
+	@for file in $(shell find $(OBJ_DIR) -type f -name '*.o'); do \
 		rm -f $$file;	\
 		printf "(libft) $(RED)Removed object $$(basename $$file)$(RESET)\n"; \
 	done
