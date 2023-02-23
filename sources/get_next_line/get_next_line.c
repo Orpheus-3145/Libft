@@ -1,111 +1,102 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 20:36:57 by anonymous         #+#    #+#             */
-/*   Updated: 2023/01/18 22:37:28 by fra              ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   get_next_line.c                                    :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: fra <fra@student.codam.nl>                   +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/02/23 05:50:00 by fra           #+#    #+#                 */
+/*   Updated: 2023/02/23 05:50:03 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	free_crs_list(t_crs **crs_lst)
+int	find_nl_pos(char *str)
 {
-	t_crs	*next;
+	int	nl_pos;
 
-	while (*crs_lst)
-	{
-		next = (*crs_lst)->next;
-		free((*crs_lst)->buffer);
-		free(*crs_lst);
-		*crs_lst = next;
-	}
+	nl_pos = 0;
+	while (str[nl_pos] && str[nl_pos] != '\n')
+		nl_pos++;
+	if (str[nl_pos] != '\n')
+		nl_pos = -1;
+	return (nl_pos);
 }
 
-t_crs	*append_crs(t_crs *list, int fd)
+void	shift_chars(char *str, int n_chars)
 {
-	t_crs	*new_crs;
+	int	i;
 
-	new_crs = allocate_cursor(fd);
-	if (! new_crs)
+	i = 1;
+	if (n_chars != -1)
 	{
-		free_crs_list(&list);
-		return (NULL);
-	}
-	while (list->next)
-		list = list->next;
-	list->next = new_crs;
-	return (new_crs);
-}
-
-t_crs	*get_crs_from_fd(t_crs *crs_list, int fd)
-{
-	t_crs	*tmp;
-
-	tmp = crs_list;
-	while (tmp)
-	{
-		if (tmp->fd == fd)
-			return (tmp);
-		tmp = tmp->next;
-	}
-	return (append_crs(crs_list, fd));
-}
-
-void	check_crs_to_free(t_crs **list)
-{
-	t_crs	*curr;
-	t_crs	*prev;
-
-	curr = *list;
-	prev = *list;
-	while (curr)
-	{
-		if (curr->eof)
+		while (str[n_chars + i])
 		{
-			if (curr == *list)
-				*list = (*list)->next;
-			else
-				prev->next = curr->next;
-			free(curr->buffer);
-			free(curr);
-			return ;
-		}
-		else
-		{
-			prev = curr;
-			curr = curr->next;
+			str[i - 1] = str[n_chars + i];
+			i++;
 		}
 	}
+	str[i - 1] = '\0';
+}
+
+char	*append_str(char *old, char *buffer, int nl_pos)
+{
+	size_t	len_old;
+	size_t	len_right;
+	char	*new_str;
+
+	len_old = 0;
+	while (old && old[len_old])
+		len_old++;
+	len_right = nl_pos;
+	if (nl_pos == -1)
+	{
+		len_right = 0;
+		while (buffer[len_right])
+			len_right++;
+	}
+	new_str = (char *) malloc((len_old + len_right + 1) * sizeof(char));
+	if (new_str)
+	{
+		new_str[len_old + len_right] = '\0';
+		while (len_right--)
+			new_str[len_old + len_right] = buffer[len_right];
+		while (len_old--)
+			new_str[len_old] = old[len_old];
+	}
+	if (old)
+		free(old);
+	return (new_str);
 }
 
 char	*get_next_line(int fd)
 {
 	char			*line;
-	t_crs			*crs;
-	static t_crs	*list_crs;
+	static char		buffer[BUFFER_SIZE + 1];
+	ssize_t			chars_read;
+	int				nl_pos;
 
-	if (fd < 0)
-	{
-		free_crs_list(&list_crs);
+	if (fd < 0 || read(fd, buffer, 0) == -1)
 		return (NULL);
-	}
-	if (! list_crs)
+	line = NULL;
+	while (1)
 	{
-		list_crs = allocate_cursor(fd);
-		if (! list_crs)
-			return (NULL);
+		if (! *buffer)
+		{
+			chars_read = read(fd, buffer, BUFFER_SIZE);
+			if (chars_read <= 0)
+			{
+				if (chars_read == -1 && line)
+					free(line);
+				return (line);
+			}
+			buffer[chars_read] = '\0';
+		}
+		nl_pos = find_nl_pos(buffer);
+		line = append_str(line, buffer, nl_pos);
+		shift_chars(buffer, nl_pos);
+		if (nl_pos != -1)
+			return (line);
 	}
-	crs = get_crs_from_fd(list_crs, fd);
-	if (! crs)
-		return (NULL);
-	line = read_line(crs);
-	if (crs->error)
-		free_crs_list(&list_crs);
-	else if (! line || crs->eof)
-		check_crs_to_free(&list_crs);
-	return (line);
 }

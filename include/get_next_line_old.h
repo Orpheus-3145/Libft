@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   get_next_line.h                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: fra <fra@student.codam.nl>                   +#+                     */
+/*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/02/23 05:52:23 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/23 05:52:27 by fra           ########   odam.nl         */
+/*   Created: 2022/10/24 20:37:18 by anonymous     #+#    #+#                 */
+/*   Updated: 2023/02/11 02:04:03 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,41 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include "libft.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
 
-int		find_nl_pos(char *str);
+typedef struct s_crs
+{
+	char			*buffer;
+	size_t			pos;
+	int				fd;
+	int				eof;
+	int				reload;
+	int				error;
+	struct s_crs	*next;
+}	t_crs;
 
-void	shift_chars(char *str, int n_chars);
+t_crs	*allocate_cursor(int fd);
 
-char	*append_str(char *old, char *buffer, int n_chars);
+int		has_n_line(t_crs *crs);
+
+char	*append_str(char *left, t_crs *crs, size_t start);
+
+int		fill_buffer(t_crs *crs);
+
+char	*read_line(t_crs *crs);
 
 char	*get_next_line(int fd);
+
+void	free_crs_list(t_crs **crs_lst);
+
+t_crs	*append_crs(t_crs *list, int fd);
+
+t_crs	*get_crs_from_fd(t_crs *crs_list, int fd);
+
+void	check_crs_to_free(t_crs **list);
 
 #endif
