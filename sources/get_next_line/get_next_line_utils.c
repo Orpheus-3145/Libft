@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/25 03:04:19 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/11/11 23:57:29 by anonymous     ########   odam.nl         */
+/*   Updated: 2023/02/23 01:49:24 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ char	*append_str(char *old, t_crs *crs, size_t start)
 	while (old && old[len_old])
 		len_old++;
 	len_right = crs->pos - start;
+	if (crs->buffer[crs->pos - 1] == '\n')
+		len_right--;
 	if (! (len_old + len_right))
 		return (NULL);
 	new_str = (char *) malloc((len_old + len_right + 1) * sizeof(char));
