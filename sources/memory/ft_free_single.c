@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_bzero.c                                         :+:    :+:            */
+/*   ft_free_single.c                                   :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: faru <faru@student.codam.nl>                 +#+                     */
+/*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/03 18:35:45 by faru          #+#    #+#                 */
-/*   Updated: 2023/02/23 18:38:25 by fra           ########   odam.nl         */
+/*   Created: 2023/02/23 18:32:15 by fra           #+#    #+#                 */
+/*   Updated: 2023/02/23 18:39:52 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-void	ft_bzero(void *to_modify, size_t no_times)
+void	*ft_free_double(void **to_free, size_t n_arr)
 {
-	char	*chr_ptr;
-
-	chr_ptr = (char *) to_modify;
-	while (no_times--)
-		*chr_ptr++ = '\0';
+	if (*to_free)
+	{
+		free(*to_free);
+		to_free = NULL;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 05:50:00 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/23 05:50:03 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/23 18:29:07 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,17 @@ int	find_nl_pos(char *str)
 	nl_pos = 0;
 	while (str[nl_pos] && str[nl_pos] != '\n')
 		nl_pos++;
-	if (str[nl_pos] != '\n')
+	if (! str[nl_pos])
 		nl_pos = -1;
 	return (nl_pos);
 }
 
-void	shift_chars(char *str, int n_chars)
+int	shift_chars(char *str)
 {
+	int	n_chars;
 	int	i;
 
+	n_chars = find_nl_pos(str);
 	i = 1;
 	if (n_chars != -1)
 	{
@@ -38,9 +40,10 @@ void	shift_chars(char *str, int n_chars)
 		}
 	}
 	str[i - 1] = '\0';
+	return (n_chars);
 }
 
-char	*append_str(char *old, char *buffer, int nl_pos)
+char	*append_str(char *old, char *buffer)
 {
 	size_t	len_old;
 	size_t	len_right;
@@ -49,13 +52,7 @@ char	*append_str(char *old, char *buffer, int nl_pos)
 	len_old = 0;
 	while (old && old[len_old])
 		len_old++;
-	len_right = nl_pos;
-	if (nl_pos == -1)
-	{
-		len_right = 0;
-		while (buffer[len_right])
-			len_right++;
-	}
+	len_right = length_new_str(buffer);
 	new_str = (char *) malloc((len_old + len_right + 1) * sizeof(char));
 	if (new_str)
 	{
@@ -70,33 +67,48 @@ char	*append_str(char *old, char *buffer, int nl_pos)
 	return (new_str);
 }
 
+int	length_new_str(char *buffer)
+{
+	int	len;
+	int	nl_pos;
+
+	nl_pos = find_nl_pos(buffer);
+	if (nl_pos == -1)
+	{
+		len = 0;
+		while (buffer[len])
+			len++;
+	}
+	else
+		len = nl_pos;
+	return (len);
+}
+
 char	*get_next_line(int fd)
 {
 	char			*line;
 	static char		buffer[BUFFER_SIZE + 1];
 	ssize_t			chars_read;
-	int				nl_pos;
 
 	if (fd < 0 || read(fd, buffer, 0) == -1)
 		return (NULL);
 	line = NULL;
+	chars_read = -2;
 	while (1)
 	{
 		if (! *buffer)
-		{
 			chars_read = read(fd, buffer, BUFFER_SIZE);
-			if (chars_read <= 0)
-			{
-				if (chars_read == -1 && line)
-					free(line);
-				return (line);
-			}
+		if (chars_read == -1)
+			break ;
+		else if (chars_read == 0)
+			return (line);
+		else if (chars_read > 0)
 			buffer[chars_read] = '\0';
-		}
-		nl_pos = find_nl_pos(buffer);
-		line = append_str(line, buffer, nl_pos);
-		shift_chars(buffer, nl_pos);
-		if (nl_pos != -1)
+		line = append_str(line, buffer);
+		if (shift_chars(buffer) != -1)
 			return (line);
 	}
+	if (line)
+		free(line);
+	return (NULL);
 }

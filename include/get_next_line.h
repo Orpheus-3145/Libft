@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 05:52:23 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/23 05:52:27 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/23 17:56:07 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@
 
 int		find_nl_pos(char *str);
 
-void	shift_chars(char *str, int n_chars);
+int		length_new_str(char *buffer);
 
-char	*append_str(char *old, char *buffer, int n_chars);
+int		shift_chars(char *str);
+
+char	*append_str(char *old, char *buffer);
 
 char	*get_next_line(int fd);
 

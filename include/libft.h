@@ -6,10 +6,9 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/02/22 23:56:23 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/23 18:38:44 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -76,6 +75,8 @@ void	ft_bzero(void *a, size_t b);
 
 void	*ft_calloc(size_t a, size_t b);
 
+void	*ft_free_single(void **to_free, size_t n_arr);
+
 void	*ft_free_double(void ***to_free, size_t n_arr);
 
 void	*ft_memchr(const void *a, int b, size_t c);
@@ -88,7 +89,7 @@ void	*ft_memmove(void *a, const void *b, size_t c);
 
 void	*ft_memset(void *a, int b, size_t c);
 
-void	ft_raise_error(char *err_text, void **to_free_d, void ***to_free_t, size_t n_elems, int end);
+void	ft_raise_error(char *text, int end);
 
 int		ft_atoi(const char *a);
 
