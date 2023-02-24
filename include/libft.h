@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/02/23 19:36:37 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/24 23:51:10 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	*ft_calloc(size_t a, size_t b);
 
 void	*ft_free_single(void **to_free);
 
-void	*ft_free_double(void ***to_free, size_t n_arr);
+void	*ft_free_double(void ***to_free, int n_arr);
 
 void	*ft_memchr(const void *a, int b, size_t c);
 
