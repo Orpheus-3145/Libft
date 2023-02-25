@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 22:18:30 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/25 05:01:45 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/25 05:09:37 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ void	*ft_free_double(void ***to_free, int n_arr)
 		{
 			tmp = (char ***) to_free;
 			while ((*tmp)[i])
-				ft_free_single(*tmp + i++);
-			ft_free_single(tmp);
+				ft_free_single((void **) **tmp + i++);
+			ft_free_single((void **) **tmp);
 		}
 		else
 		{
 			while (i < n_arr)
-				ft_free_single(*to_free + i++);
-			ft_free_single(to_free);
+				ft_free_single(**to_free + i++);
+			ft_free_single(**to_free);
 		}
 	}
 	return (NULL);
