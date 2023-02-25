@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/09 22:18:30 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/25 05:22:07 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/25 06:50:59 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_free_double(void ***to_free, int n_arr)
 {
-	int	i;
-	char ***tmp;
+	int		i;
+	char	***tmp;
 
 	if (to_free && *to_free)
 	{

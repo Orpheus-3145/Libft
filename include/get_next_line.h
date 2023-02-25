@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 05:52:23 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/23 17:56:07 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/25 05:53:33 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include "libft.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42

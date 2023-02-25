@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 05:50:00 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/23 18:29:07 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/25 05:52:46 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ char	*append_str(char *old, char *buffer)
 		len_old++;
 	len_right = length_new_str(buffer);
 	new_str = (char *) malloc((len_old + len_right + 1) * sizeof(char));
-	if (new_str)
+	if (! new_str)
+		ft_raise_error("(gnl) Memory error", 0);
+	else
 	{
 		new_str[len_old + len_right] = '\0';
 		while (len_right--)
@@ -62,8 +64,7 @@ char	*append_str(char *old, char *buffer)
 		while (len_old--)
 			new_str[len_old] = old[len_old];
 	}
-	if (old)
-		free(old);
+	ft_free_single((void **) &old);
 	return (new_str);
 }
 
@@ -90,25 +91,25 @@ char	*get_next_line(int fd)
 	static char		buffer[BUFFER_SIZE + 1];
 	ssize_t			chars_read;
 
-	if (fd < 0 || read(fd, buffer, 0) == -1)
-		return (NULL);
-	line = NULL;
-	chars_read = -2;
-	while (1)
+	if (fd >= 0 && ! read(fd, buffer, 0))
 	{
-		if (! *buffer)
-			chars_read = read(fd, buffer, BUFFER_SIZE);
-		if (chars_read == -1)
-			break ;
-		else if (chars_read == 0)
-			return (line);
-		else if (chars_read > 0)
-			buffer[chars_read] = '\0';
-		line = append_str(line, buffer);
-		if (shift_chars(buffer) != -1)
-			return (line);
+		line = NULL;
+		chars_read = -2;
+		while (1)
+		{
+			if (! *buffer)
+				chars_read = read(fd, buffer, BUFFER_SIZE);
+			if (chars_read == -1)
+				break ;
+			else if (chars_read == 0)
+				return (line);
+			else if (chars_read > 0)
+				buffer[chars_read] = '\0';
+			line = append_str(line, buffer);
+			if (shift_chars(buffer) != -1)
+				return (line);
+		}
 	}
-	if (line)
-		free(line);
-	return (NULL);
+	ft_raise_error("(gnl) File error", 0);
+	return (ft_free_single((void **) &line));
 }
