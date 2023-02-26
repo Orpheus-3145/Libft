@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/02/24 23:51:10 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/26 03:31:35 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,8 @@ char	*ft_xitoa(int a, int capital);
 char	*ft_append_char(char to_add, char **str);
 
 int		ft_count_occ(char *str, char to_find);
+
+size_t	ft_n_substr(char const *str, char char_split);
 
 char	**ft_split(char const *a, char b);
 

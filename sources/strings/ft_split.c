@@ -6,32 +6,11 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/08 01:45:24 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/02/11 00:15:04 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/26 04:29:28 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-
-static size_t	n_substr(char const *str, char char_split)
-{
-	size_t	cnt;
-	size_t	reset;
-
-	cnt = 0;
-	reset = 1;
-	while (*str)
-	{
-		if (*str != char_split && reset)
-		{
-			cnt++;
-			reset = 0;
-		}
-		else if (*str == char_split)
-			reset = 1;
-		str++;
-	}
-	return (cnt);
-}
 
 static size_t	len_substr(char const *str, char char_split)
 {
@@ -51,7 +30,7 @@ char	**ft_split(char const *str, char split)
 
 	if (! str)
 		return (NULL);
-	matrix = (char **) malloc ((n_substr(str, split) + 1) * sizeof(char *));
+	matrix = (char **) malloc ((ft_n_substr(str, split) + 1) * sizeof(char *));
 	if (! matrix)
 		return (NULL);
 	index = 0;
@@ -68,5 +47,5 @@ char	**ft_split(char const *str, char split)
 		str++;
 	}
 	matrix[index] = 0;
-	return (matrix - n_substr(str, split));
+	return (matrix - ft_n_substr(str, split));
 }
