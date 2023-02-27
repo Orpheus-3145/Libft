@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 05:50:00 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/27 02:46:09 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/27 04:58:29 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,9 @@ char	*get_next_line(int fd)
 		{
 			if (! *buffer)
 				chars_read = read(fd, buffer, BUFFER_SIZE);
-			if (chars_read < 0)
+			if (chars_read == -1)
 				break ;
-			else if (! chars_read == 0)
+			else if (! chars_read)
 				return (line);
 			else if (chars_read > 0)
 				buffer[chars_read] = '\0';
