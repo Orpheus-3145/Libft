@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/08 01:45:24 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/02/26 04:29:28 by fra           ########   odam.nl         */
+/*   Updated: 2023/02/27 03:01:30 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ char	**ft_split(char const *str, char split)
 	char	*sub_str;
 	size_t	index;
 
+	index = 0;
 	if (! str)
 		return (NULL);
-	matrix = (char **) malloc ((ft_n_substr(str, split) + 1) * sizeof(char *));
+	matrix = malloc ((ft_n_substr(str, split) + 1) * sizeof(char *));
 	if (! matrix)
-		return (NULL);
-	index = 0;
-	while (*str)
+		ft_raise_error("(ft_split) Memory error", 0);
+	while (matrix && *str)
 	{
 		if (*str != split)
 		{
@@ -46,6 +46,7 @@ char	**ft_split(char const *str, char split)
 		}
 		str++;
 	}
-	matrix[index] = 0;
-	return (matrix - ft_n_substr(str, split));
+	if (matrix)
+		matrix[index] = 0;
+	return (matrix);
 }
