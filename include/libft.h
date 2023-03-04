@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/02/26 03:31:35 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/04 21:22:30 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int		ft_isascii(int a);
 
 int		ft_isdigit(int a);
 
+int		ft_ishexadigit(int c);
+
 int		ft_isprint(int a);
 
 int		ft_isspace(char c);
@@ -40,6 +42,8 @@ int		ft_isspace(char c);
 int		ft_toupper(int a);
 
 int		ft_tolower(int a);
+
+int		ft_is_number(char *n);
 
 int		ft_is_int(char *number);
 

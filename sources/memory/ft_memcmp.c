@@ -6,15 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 11:47:01 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/20 19:06:10 by faru          ########   odam.nl         */
+/*   Updated: 2023/03/04 21:31:26 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
-#include"libft.h"
-#include<stdio.h>
-//#include<stdlib.h>
-//#include<string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *src, const void *dst, size_t n)
 {
@@ -27,7 +23,7 @@ int	ft_memcmp(const void *src, const void *dst, size_t n)
 	cnt = 0;
 	if (! n)
 		return (0);
-	while (cnt < n)
+	while (cnt < n && c_src[cnt] && c_dst[cnt])
 	{
 		if (c_src[cnt] != c_dst[cnt])
 			return ((unsigned char) c_src[cnt] - (unsigned char) c_dst[cnt]);
@@ -35,17 +31,3 @@ int	ft_memcmp(const void *src, const void *dst, size_t n)
 	}
 	return (0);
 }
-/*
-int main()
-{
-	//const char *a, *b; 
-	//a = malloc(10);
-	//b = malloc(10);
-	//printf("std->diff: %d\n", memcmp("NULL", b, 3));
-	//printf("upd->diff: %d\n", ft_memcmp("NULL", b, 3));
-	char s2[] = {0, 0, 127, 0};
-	char s3[] = {0, 0, 42, 0};
-	printf("diff: %d\n", ft_memcmp(s2, s3, 4));
-	return (0);
-}
-*/

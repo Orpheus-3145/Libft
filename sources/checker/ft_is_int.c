@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/22 23:54:33 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/23 21:10:26 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/04 22:41:54 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,10 @@
 
 int	ft_is_int(char *number)
 {
-	int	i;
-
-	i = 0;
-	if (! number)
-		return (0);
-	if (number[i] == '+' || number[i] == '-')
-		i++;
-	if (! number[i])
-		return (0);
-	while (number[i])
+	if (ft_is_long(number))
 	{
-		if (! ft_isdigit(number[i++]))
-			return (0);
+		if (! (ft_atoi(number) - ft_atol(number)))
+			return (1);
 	}
-	return (! (ft_atoi(number) - ft_atol(number)));
+	return (0);
 }

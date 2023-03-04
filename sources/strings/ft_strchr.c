@@ -6,14 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 11:16:59 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/20 19:23:35 by faru          ########   odam.nl         */
+/*   Updated: 2023/03/04 20:06:31 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include"libft.h"
-//#include <stdio.h>
-//#include <string.h>
 
 char	*ft_strchr(const char *str_to_search, int to_find)
 {
@@ -33,11 +30,3 @@ char	*ft_strchr(const char *str_to_search, int to_find)
 	else
 		return (NULL);
 }
-/*
-int main()
-{
-	printf("std->trovato: %s\n", strchr("dcf", -18));
-	printf("mia->trovato: %s\n", ft_strchr("dcf", -18));
-	return (0);
-}
-*/
