@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/03/05 03:29:49 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/05 04:30:43 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ void	*ft_memset(void *a, int b, size_t c);
 
 void	ft_raise_error(char *text, int end);
 
+float	ft_atof(const char *str);
+
 int		ft_atoi(const char *a);
 
 long	ft_atol(const char *a);
@@ -112,6 +114,8 @@ size_t	ft_mod(int a);
 size_t	ft_nbrlen(size_t nbr, int base);
 
 float	ft_pow(int base, int exp);
+
+float	ft_xatof(const char *str_n);
 
 int		ft_xatoi(char *str);
 
