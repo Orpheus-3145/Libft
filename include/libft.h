@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/03/05 01:41:02 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/05 03:29:49 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,11 +113,15 @@ size_t	ft_nbrlen(size_t nbr, int base);
 
 float	ft_pow(int base, int exp);
 
+int		ft_xatoi(char *str);
+
 char	*ft_xitoa(int a, int capital);
 
 char	*ft_append_char(char to_add, char **str);
 
 int		ft_count_occ(char *str, char to_find);
+
+int		ft_find_index(char *str, char value);
 
 size_t	ft_n_substr(char const *str, char char_split);
 

@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/04 18:58:56 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/04 22:34:14 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/05 03:27:38 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ int check_hexa(char *n)
 int	ft_is_number(char *n)
 {
 	int		i;
-	char	*exa_small;
-	char	*exa_capital;
+	char	*hexa;
 	
 	if (! n)
 		return (0);
@@ -59,15 +58,10 @@ int	ft_is_number(char *n)
 		return (0);
 	else if (n[i] == '+' || n[i] == '-')
 		n++;
-	exa_small = ft_strnstr(n, "0x", ft_strlen(n));
-	exa_capital = ft_strnstr(n, "0X", ft_strlen(n));
-	if (exa_small && exa_capital)
+	hexa = ft_strnstr(n, "0x", ft_strlen(n));
+	if (hexa && ft_strnstr(hexa + 1, "0x", ft_strlen(hexa)))
 		return (0);
-	else if (exa_small && ft_strnstr(exa_small + 1, "0x", ft_strlen(exa_small)))
-		return (0);
-	else if (exa_capital && ft_strnstr(exa_capital + 1, "0x", ft_strlen(exa_capital)))
-		return (0);
-	else if (exa_small || exa_capital)
+	else if (hexa)
 		return (check_hexa(n));
 	else
 		return (check_decimal(n));

@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_ishexadigit.c                                   :+:    :+:            */
+/*   ft_find_index.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/03/04 19:38:00 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/05 03:29:53 by fra           ########   odam.nl         */
+/*   Created: 2023/03/05 03:00:27 by fra           #+#    #+#                 */
+/*   Updated: 2023/03/05 03:01:53 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_ishexadigit(int c)
+int	ft_find_index(char *str, char value)
 {
-	return (ft_isdigit(c) || (c >= 'a' && c <= 'f'));
+	int	cnt;
+	
+	cnt = 0;
+	while (str && str[cnt] != value)
+		cnt++;
+	return (cnt);
 }
