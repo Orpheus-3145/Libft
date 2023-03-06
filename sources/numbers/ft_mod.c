@@ -6,13 +6,13 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/27 19:20:26 by faru          #+#    #+#                 */
-/*   Updated: 2023/02/04 19:42:18 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/06 06:20:56 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_mod(int a)
+float	ft_mod(float a)
 {
 	if (a < 0)
 		a *= -1;

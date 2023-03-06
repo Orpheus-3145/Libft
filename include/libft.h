@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/03/06 04:55:05 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/06 06:21:08 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ char	*ft_itoa(int a);
 
 char	*ft_litoa(long a);
 
-size_t	ft_mod(int a);
+float	ft_mod(float a);
 
 size_t	ft_nbrlen(size_t nbr, int base);
 
