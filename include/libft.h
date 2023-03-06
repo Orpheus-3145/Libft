@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/03/06 04:16:19 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/06 04:55:05 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,32 +129,32 @@ int		ft_find_index(char *str, char value);
 
 size_t	ft_n_substr(char const *str, char char_split);
 
-char	**ft_split(char const *a, char b);
+char	**ft_split(char const *str, char split);
 
-char	*ft_strchr(const char *a, int b);
+char	*ft_strchr(const char *str_to_search, int to_find);
 
-char	*ft_strdup(const char *a);
+char	*ft_strdup(const char *str);
 
-void	ft_striteri(char *a, void (*f)(unsigned int, char *));
+void	ft_striteri(char *str, void (*f)(unsigned int, char*));
 
-char	*ft_strjoin(char const *a, char const *b);
+char	*ft_strjoin(char const *s1, char const *s2);
 
-size_t	ft_strlcat(char *a, const char *b, size_t c);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
 
-size_t	ft_strlcpy(char *a, const char *b, size_t c);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 
 size_t	ft_strlen(const char *str);
 
-char	*ft_strmapi(char const *a, char (*f)(unsigned int, char));
+char	*ft_strmapi(char const *str, char (*f)(unsigned int, char));
 
-int		ft_strncmp(const char *a, const char *b, size_t c);
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
 
-char	*ft_strnstr(const char *a, char *b, size_t c);
+char	*ft_strnstr(const char *str, char *to_find, size_t len);
 
-char	*ft_strrchr(const char *a, int b);
+char	*ft_strrchr(const char *str_to_search, int to_find);
 
-char	*ft_strtrim(char const *a, char const *b);
+char	*ft_strtrim(char const *str, char const *set);
 
-char	*ft_substr(char const *a, unsigned int b, size_t c);
+char	*ft_substr(const char *str, unsigned int start, size_t len);
 
 #endif

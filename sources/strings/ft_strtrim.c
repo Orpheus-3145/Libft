@@ -6,14 +6,12 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/07 11:00:40 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/21 18:27:26 by faru          ########   odam.nl         */
+/*   Updated: 2023/03/06 04:54:49 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include<stddef.h>
+
 #include"libft.h"
-#include<stdio.h>
 
 char	*ft_strtrim(char const *str, char const *set)
 {
@@ -35,11 +33,3 @@ char	*ft_strtrim(char const *str, char const *set)
 		trimmed = ft_substr(str, start, end - start + 1);
 	return (trimmed);
 }
-
-// int main()
-// {
-//     const char *s = "";
-//     const char *set = "";
-// 	printf("source: |%s|\ntrimmed: |%s|\n", s, ft_strtrim(s, set));
-//     return (0);
-// }

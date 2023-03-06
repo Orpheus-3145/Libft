@@ -6,14 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/07 10:59:40 by faru          #+#    #+#                 */
-/*   Updated: 2023/01/30 00:34:16 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/06 04:53:32 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include<stddef.h>
 #include"libft.h"
-#include<stdio.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -38,11 +35,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (join_str);
 	}
 }
-/*
-int main()
-{
-	char *a, *b;
-	printf("upd->sub_str: |%s|\n", ft_strjoin(a, b));
-	return (0);
-}
-*/

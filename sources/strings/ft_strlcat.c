@@ -6,14 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 16:45:43 by faru          #+#    #+#                 */
-/*   Updated: 2022/11/02 17:43:28 by faru          ########   odam.nl         */
+/*   Updated: 2023/03/06 04:51:34 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
 #include"libft.h"
-//#include<string.h>
-//#include<stdio.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
@@ -40,14 +37,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	else
 		return (ft_strlen(src) + size);
 }
-/*
-int main()
-{
-	char *src = "aaaa";
-	char *dst = NULL;
-	size_t tot = 0;
-	printf("std->len: %zu\tdst: |%s|\n", strlcat(dst, src, tot), dst);
-	printf("mia->len: %zu\tdst: |%s|\n", ft_strlcat(dst, src, tot), dst);
-	return (0);
-}
-*/

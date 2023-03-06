@@ -6,21 +6,12 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/14 13:28:31 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/10/14 13:28:31 by anonymous     ########   odam.nl         */
+/*   Updated: 2023/03/06 04:53:52 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include<stddef.h>
 #include"libft.h"
-//#include<stdio.h>
 
-/*
-static char map_f(unsigned int pos, char to_modify)
-{
-   return (to_modify + pos + 4);
-}
-*/
 char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 {
 	size_t	length;
@@ -37,13 +28,3 @@ char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 		new_str[length] = f(length, str[length]);
 	return (new_str);
 }
-/*
-int main()
-{
-	char *tmp = "abcd";
-	char (*fun_ptr)(unsigned int, char) = &map_f;
-	//ft_strmapi(tmp, *fun_ptr);
-    printf("%s\n", ft_strmapi(tmp, *fun_ptr));
-    return (0);
-}
-*/
