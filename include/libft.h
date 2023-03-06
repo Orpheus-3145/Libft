@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/03/05 04:30:43 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/06 04:16:19 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,15 @@ void	*ft_free_single(void **to_free);
 
 void	*ft_free_double(void ***to_free, int n_arr);
 
-void	*ft_memchr(const void *a, int b, size_t c);
+void	*ft_memchr(const void *str_to_search, int to_find, size_t n);
 
-int		ft_memcmp(const void *a, const void *b, size_t c);
+int		ft_memcmp(const void *src, const void *dst, size_t n);
 
-void	*ft_memcpy(void *a, const void *b, size_t c);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
-void	*ft_memmove(void *a, const void *b, size_t c);
+void	*ft_memmove(void *dst, const void *src, size_t len);
 
-void	*ft_memset(void *a, int b, size_t c);
+void	*ft_memset(void *str, int to_write, size_t n);
 
 void	ft_raise_error(char *text, int end);
 
@@ -115,7 +115,7 @@ size_t	ft_nbrlen(size_t nbr, int base);
 
 float	ft_pow(int base, int exp);
 
-float	ft_xatof(const char *str_n);
+float	ft_xatof(char *str_n);
 
 int		ft_xatoi(char *str);
 

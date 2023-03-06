@@ -6,14 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 17:49:19 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/16 18:48:16 by faru          ########   odam.nl         */
+/*   Updated: 2023/03/06 04:15:20 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
 #include"libft.h"
-#include <string.h>
-#include <stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

@@ -6,13 +6,13 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/05 04:22:45 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/05 04:45:16 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/06 02:58:00 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float	ft_xatof(const char *str_n)
+float	ft_xatof(char *str_n)
 {
 	int		i;
 	float	nbr;

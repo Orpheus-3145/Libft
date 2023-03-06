@@ -6,14 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 11:34:01 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/20 19:05:05 by faru          ########   odam.nl         */
+/*   Updated: 2023/03/06 04:16:13 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
 #include"libft.h"
-//#include<stdio.h>
-//#include<string.h>
 
 void	*ft_memchr(const void *str_to_search, int to_find, size_t n)
 {
@@ -32,11 +29,3 @@ void	*ft_memchr(const void *str_to_search, int to_find, size_t n)
 	}
 	return (NULL);
 }
-/*
-int main()
-{
-	printf("std->found: %s\n", (char *)memchr(NULL, 1102, 8));
-	printf("upd->found: %s\n", (char *)ft_memchr(NULL, 1102, 8));
-	return (0);
-}
-*/
