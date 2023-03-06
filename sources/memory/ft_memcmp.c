@@ -6,7 +6,7 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 11:47:01 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/04 21:31:26 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/06 04:44:42 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,8 @@ int	ft_memcmp(const void *src, const void *dst, size_t n)
 			return ((unsigned char) c_src[cnt] - (unsigned char) c_dst[cnt]);
 		cnt++;
 	}
-	return (0);
+	if (cnt == n || (! src[cnt] && ! dst[cnt]))
+		return (0);
+	else
+		return (-1);
 }

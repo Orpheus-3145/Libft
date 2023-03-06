@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/04 18:58:56 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/05 03:27:38 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/06 04:45:14 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,9 @@ int check_hexa(char *n)
 	{
         if ((n[i] == '.') || (n[i] == ','))
 			i++;
-		if (! ft_memcmp(n + i, "0x", 2) || ! ft_memcmp(n + i, "0X", 2))
+		if (! ft_strncmp(n + i, "0x", 2) || ! ft_strncmp(n + i, "0X", 2))
 			i += 2;
+		ft_printf("\t|%s|\n", n + i);
 		if (! n[i] || ! ft_ishexadigit(n[i]))
 			return (0);
 		i++;
