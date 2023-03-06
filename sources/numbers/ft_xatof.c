@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/05 04:22:45 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/06 02:58:00 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/06 05:10:18 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ float	ft_xatof(char *str_n)
 		str_n++;
 	if (! ft_memcmp(str_n + i, "0x", 2))
 		i += 2;
-	while (ft_isdigit(str_n[i]))
-		nbr = (nbr * 16) + ft_find_index("0123456789abcdef", str_n[i++]);
+	while (ft_ishexadigit(str_n[i]))
+		nbr = (nbr * 16) + ft_find_index("0123456789ABCDEF", str_n[i++]);
 	if (str_n[i] == ',' || str_n[i] == '.')
 	{
 		comma_pos = i++;
@@ -45,8 +45,8 @@ float	ft_xatof(char *str_n)
 			comma_pos += 2;
 		}
 	}
-	while (ft_isdigit(str_n[i]))
-		nbr = (nbr * 16) + ft_find_index("0123456789abcdef", str_n[i++]);
+	while (ft_ishexadigit(str_n[i]))
+		nbr = (nbr * 16) + ft_find_index("0123456789ABCDEF", str_n[i++]);
 	nbr *= sign;
 	if (comma_pos != -1)
 		nbr *= ft_pow(16, comma_pos - i + 1);
