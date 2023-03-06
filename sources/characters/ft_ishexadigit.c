@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/04 19:38:00 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/05 03:29:53 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/06 02:31:28 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_ishexadigit(int c)
 {
-	return (ft_isdigit(c) || (c >= 'a' && c <= 'f'));
+	return (ft_isdigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F'));
 }
