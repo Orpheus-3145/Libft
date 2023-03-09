@@ -6,7 +6,7 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 16:15:44 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/06 04:15:35 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/09 23:31:51 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	*ft_memset(void *str, int to_write, size_t n)
 {
-	size_t			counter;
-	char			*tmp_str;
+	size_t	counter;
+	char	*tmp_str;
 
-	counter = 0;
-	tmp_str = (char *) str;
-	while (counter < n)
+	if (str)
 	{
-		*(tmp_str + counter) = to_write;
-		counter++;
+		counter = 0;
+		tmp_str = (char *) str;
+		while (counter < n)
+			tmp_str[counter++] = to_write;
 	}
-	return ((void *) tmp_str);
+	return (str);
 }
