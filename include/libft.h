@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/03/06 07:19:14 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/12 06:04:18 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,9 +113,11 @@ float	ft_mod(float a);
 
 size_t	ft_nbrlen(size_t nbr, int base);
 
-float ft_part_dec(float number);
+float	ft_part_dec(float number);
 
-float ft_part_int(float number);
+float	ft_part_int(float number);
+
+int		ft_round_to_int(double number);
 
 float	ft_pow(int base, int exp);
 
