@@ -90,7 +90,7 @@ char	*get_next_line(int fd)
 	char			*line;
 	static char		buffer[BUFFER_SIZE + 1];
 	ssize_t			chars_read;
-
+cd
 	line = NULL;
 	if (fd >= 0 && ! read(fd, buffer, 0))
 	{
@@ -110,6 +110,6 @@ char	*get_next_line(int fd)
 				return (line);
 		}
 	}
-	ft_raise_error("(gnl) File error", 0);
+	ft_raise_error("(gnl) File doesn't exist or permission denied", 0);
 	return (ft_free_single((void **) &line));
 }
