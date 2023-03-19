@@ -6,36 +6,36 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/04 18:58:56 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/06 04:47:46 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/19 03:46:17 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int check_decimal(char *n)
+int	check_decimal(char *n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (n[i])
 	{
-        if ((n[i] == '.') || (n[i] == ','))
+		if ((n[i] == '.') || (n[i] == ','))
 			i++;
 		if (! n[i] || ! ft_isdigit(n[i]))
 			return (0);
 		i++;
 	}
-    return (i && (i == ft_strlen(n)));
+	return (i && (i == ft_strlen(n)));
 }
 
-int check_hexa(char *n)
+int	check_hexa(char *n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (n[i])
 	{
-        if ((n[i] == '.') || (n[i] == ','))
+		if ((n[i] == '.') || (n[i] == ','))
 			i++;
 		if (! ft_strncmp(n + i, "0x", 2) || ! ft_strncmp(n + i, "0X", 2))
 			i += 2;
@@ -43,14 +43,14 @@ int check_hexa(char *n)
 			return (0);
 		i++;
 	}
-    return (i && (i == ft_strlen(n)));
+	return (i && (i == ft_strlen(n)));
 }
 
 int	ft_is_number(char *n)
 {
 	int		i;
 	char	*hexa;
-	
+
 	if (! n)
 		return (0);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/05 03:45:51 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/05 04:28:47 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/19 04:01:21 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,20 @@ float	ft_atof(const char *str_n)
 	nbr = 0;
 	sign = 1;
 	comma_pos = -1;
-	while (ft_isspace(str_n[i]))
+	while (ft_isspace(*str_n))
 		str_n++;
-	if (str_n[i] == '-')
+	if (*str_n == '-' || *str_n == '+')
 	{
-		sign = -1;
-		str_n++;
+		if (*str_n++ == '-')
+			sign = -1;
 	}
-	else if (str_n[i] == '+')
-		str_n++;
 	while (ft_isdigit(str_n[i]))
+	{
+		if (comma_pos == -1 && (str_n[i] == ',' || str_n[i] == '.'))
+			comma_pos = i++;
 		nbr = (nbr * 10) + (str_n[i++] - '0');
-	if (str_n[i] == ',' || str_n[i] == '.')
-		comma_pos = i++;
-	while (ft_isdigit(str_n[i]))
-		nbr = (nbr * 10) + (str_n[i++] - '0');
-	nbr *= sign;
+	}
 	if (comma_pos != -1)
 		nbr *= ft_pow(10, comma_pos - i + 1);
-	return (nbr);
+	return (nbr * sign);
 }

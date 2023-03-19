@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/05 02:42:02 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/06 17:12:57 by faru          ########   odam.nl         */
+/*   Updated: 2023/03/19 03:48:30 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	find_hexa_char(char c_to_cast)
 int	ft_xatoi(char *str)
 {
 	int	sign;
-	int	nbr;    
+	int	nbr;
 	int	i;
 
 	nbr = 0;
