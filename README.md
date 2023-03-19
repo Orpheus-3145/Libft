@@ -1,8 +1,5 @@
-# Libft_fullpower
+# Libft
 Implementation of some C functions standard or user-definied
-
-# Create library
-Command 'make' creates the archive libft.a
 
 # Structure
     include\                   ==>> header files
@@ -23,6 +20,9 @@ Command 'make' creates the archive libft.a
         +------> numbers       ==>> managing numbers, convertions to int (dec/bin/hex) from string and vice versa, other random stuff for numbers
         |
         +------> strings       ==>> implementation both of std and custom function for managing strings
+
+# Create library
+Command 'make' creates the archive libft.a, that can be included in other applications
 
 # Info
     42 project: LIBFT (https://cdn.intra.42.fr/pdf/pdf/73987/en.subject.pdf)
