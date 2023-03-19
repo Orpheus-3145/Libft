@@ -12,10 +12,12 @@
 
 #include "libft.h"
 
-void	ft_raise_error(char *text, int end)
+void	*ft_raise_error(char *text, int end)
 {
 	ft_putstr_fd(text, 2);
 	ft_putchar_fd('\n', 2);
 	if (end)
 		exit(EXIT_FAILURE);
+	else
+		return (NULL);
 }

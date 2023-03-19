@@ -93,7 +93,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 
 void	*ft_memset(void *str, int to_write, size_t n);
 
-void	ft_raise_error(char *text, int end);
+void	*ft_raise_error(char *text, int end);
 
 float	ft_atof(const char *str);
 
