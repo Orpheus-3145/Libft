@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 05:50:00 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/27 04:58:29 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/19 18:57:06 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ char	*get_next_line(int fd)
 	char			*line;
 	static char		buffer[BUFFER_SIZE + 1];
 	ssize_t			chars_read;
-cd
+
 	line = NULL;
 	if (fd >= 0 && ! read(fd, buffer, 0))
 	{
