@@ -8,7 +8,7 @@ Implementation of some C functions used in greater projects
         |
         +-----> characters     ==>> directory for checking the type of the char received (digit, alphabetical, printable, ...)
         |
-        +-----> ft_printf      ==>> implementation of the C function printf(), ft_printf() handles: %c, %s, %p, %d ('+' and ' '), %i, %u, %x ('#'), %X ('#'), %%
+        +-----> ft_printf      ==>> implementation of the C function printf(), it handles the following placeholders: %c, %s, %p, %d ('+' and ' '), %i, %u, %x ('#'), %X ('#'), %%
         |
         +-----> get_next_line  ==>> implementation of a function that, given a file descriptor, prints, repeteadly, the lines of the relative file
         |
