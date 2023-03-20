@@ -1,6 +1,3 @@
-# Libft
-Implementation of some C functions used in greater projects
-
 # Structure
     include\                   ==>> header files
     objects\                   ==>> deposit for object files
