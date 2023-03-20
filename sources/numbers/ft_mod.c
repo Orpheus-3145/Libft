@@ -6,15 +6,15 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/27 19:20:26 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/06 06:20:56 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/20 03:57:00 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float	ft_mod(float a)
+long	ft_mod(long number)
 {
-	if (a < 0)
-		a *= -1;
-	return (a);
+	if (number < 0)
+		number *= -1;
+	return (number);
 }

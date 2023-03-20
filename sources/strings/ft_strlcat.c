@@ -6,7 +6,7 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 16:45:43 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/06 04:51:34 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/20 02:42:27 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 			index++;
 		}
 		dest[len_dest + index] = '\0';
-		return (ft_strlen(src) + len_dest);
+		return (index);
 	}
 	else
-		return (ft_strlen(src) + size);
+		return (0);
 }

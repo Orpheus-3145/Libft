@@ -6,36 +6,12 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 17:45:38 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/11/02 18:02:33 by faru          ########   odam.nl         */
+/*   Updated: 2023/03/20 00:29:36 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-#include<stdlib.h>
-#include<stddef.h>
-#include<stdio.h>
-#include<unistd.h>
-/*
-static void	del(void *obj)
-{
-	free(obj);
-}
+#include "libft.h"
 
-static void	*f(void *n_ptr)
-{
-	char	*c_ptr;
-	size_t index;
-
-	c_ptr = (char *) n_ptr;
-	index = 0;
-	while (c_ptr[index])
-	{
-		c_ptr[index] += 1;
-		index++;
-	}
-	return ((void *) c_ptr);
-}
-*/
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
@@ -63,22 +39,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_lst);
 }
-/*
-int main()
-{
-	char *v1 = "abcd", *v2 = "efgh", *v3 = "ijklm", *v4 = "nopq";
-	t_list *first, *second, *third, *fourth;
-	first = ft_lstnew(ft_strdup(v1));
-	second = ft_lstnew(ft_strdup(v2));
-	third = ft_lstnew(ft_strdup(v3));
-	fourth = ft_lstnew(ft_strdup(v4));
-	first->next = second;
-	second->next = third;
-	third->next = fourth;
-	t_list *tmp;// = first;
-	ft_print_result(first);
-	tmp = ft_lstmap(first, f, del);
-	ft_print_result(tmp);
-	return (0);
-}
-*/

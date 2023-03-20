@@ -1,5 +1,5 @@
 # Libft
-Implementation of some C functions standard or user-definied
+Implementation of some C functions used in greater projects
 
 # Structure
     include\                   ==>> header files
@@ -20,6 +20,8 @@ Implementation of some C functions standard or user-definied
         +------> numbers       ==>> managing numbers, convertions to int (dec/bin/hex) from string and vice versa, other random stuff for numbers
         |
         +------> strings       ==>> implementation both of std and custom function for managing strings
+
+        (see include/*.h files for specific documentation)
 
 # Create library
 Command 'make' creates the archive libft.a, that can be included in other applications

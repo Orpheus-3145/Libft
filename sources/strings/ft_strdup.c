@@ -6,7 +6,7 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 19:37:50 by faru          #+#    #+#                 */
-/*   Updated: 2023/02/27 02:52:10 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/20 01:45:49 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	*ft_strdup(const char *str)
 	lenght_str = ft_strlen(str);
 	new_str = (char *) malloc((lenght_str + 1) * sizeof(char));
 	if (! new_str)
-		ft_raise_error("(ft_strdup) Memory error", 0);
+		return (ft_raise_error("(ft_strdup) Memory error", 0));
 	else
 	{
 		new_str[lenght_str] = '\0';
 		while (lenght_str--)
 			new_str[lenght_str] = str[lenght_str];
+		return (new_str);
 	}
-	return (new_str);
 }

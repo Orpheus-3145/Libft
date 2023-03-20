@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 16:15:44 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/09 23:31:51 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/20 00:57:26 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 void	*ft_memset(void *str, int to_write, size_t n)
 {

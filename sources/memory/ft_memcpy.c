@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 12:57:17 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/06 04:14:55 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/20 00:54:53 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

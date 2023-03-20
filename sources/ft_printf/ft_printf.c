@@ -6,14 +6,17 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/04 00:21:51 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/11/11 23:17:01 by anonymous     ########   odam.nl         */
+/*   Updated: 2023/03/20 03:54:46 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	check_char(char to_check, char *str_check)
+int	check_char(char to_check)
 {
+	char	*str_check;
+
+	str_check = "csd%iupxX";
 	while (*str_check)
 	{
 		if (to_check == *str_check++)
@@ -30,7 +33,7 @@ int	check_str(const char *str)
 		{
 			if (*str == '#' || *str == ' ' || *str == '+')
 				str++;
-			if (! check_char(*str, "csd%iupxX"))
+			if (! check_char(*str))
 				return (0);
 			if (*str == '%')
 				str++;

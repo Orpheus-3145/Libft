@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstdelone.c                                     :+:    :+:            */
+/*   ft_lstdelone_bonus.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 02:49:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/10/11 12:16:18 by faru          ########   odam.nl         */
+/*   Updated: 2023/03/20 00:25:00 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-#include<stdlib.h>
-/*
-static void	del(void *obj)
-{
-	free(obj);
-}
-*/
+#include "libft.h"
+
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst && del)
@@ -26,23 +20,3 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		free(lst);
 	}
 }
-/*
-int main()
-{
-	int v1 = 1, v2 = 2;
-	int *p1 = &v1, *p2 = &v2;
-	t_list *first, *second;
-	first = (t_list *) malloc(sizeof(t_list));
-	second = (t_list *) malloc(sizeof(t_list));
-	first->content = p1;
-	first->next = second;
-	second->content = p2;   
-	second->next = NULL;
-	
-	printf("pre delete: %d\n", *((int *)(first->content)));
-	ft_lstdelone(first, del);
-	if (first->content == NULL)
-		printf("eliminato\n");
-	return (0);
-}
-*/
