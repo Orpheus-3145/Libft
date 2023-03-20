@@ -24,7 +24,7 @@ Implementation of some C functions used in greater projects
         (see include/*.h files for specific documentation)
 
 # Create library
-Command 'make' creates the archive libft.a, that can be included in other applications
+Command 'make' creates the file libft.a, that archivecan be included in other applications
 
 # Info
     42 project: LIBFT (https://cdn.intra.42.fr/pdf/pdf/73987/en.subject.pdf)
