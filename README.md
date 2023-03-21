@@ -25,4 +25,4 @@ Command 'make' creates the file libft.a, that archive can be included in other a
 
 # Info
     42 project: LIBFT (https://cdn.intra.42.fr/pdf/pdf/73987/en.subject.pdf)
-    by: Francesco Aru, intra42 nickname: @faru, Codam Amsterdam
+    by: Francesco Aru, francesco.aru25@gmail.com, intra42/slack nickname: @faru, Codam, Amsterdam
