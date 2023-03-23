@@ -6,19 +6,19 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/03/20 03:05:10 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/23 16:24:59 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <fcntl.h>
-# include <limits.h>
-# include <stdarg.h>
+# include <stddef.h>		// NULL, size_t type
+# include <stdlib.h>    	// malloc(), free()
+# include <unistd.h>    	// write(), read(), open(), close(), ...
+# include <fcntl.h>			// macro to open files (O_CREAT, O_WRONLY, O_RDONLY ..)
+# include <stdint.h>		// cross-compiler types
+# include <limits.h>		// limits of types (INT_MAX, LONG_MAX, ...)
+# include <stdarg.h>		// variable number of arguments
 # include "get_next_line.h"
 # include "ft_printf.h"
 
