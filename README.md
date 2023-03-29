@@ -20,9 +20,10 @@
 
         (see include/*.h files for specific documentation)
 
-# Create library
-Command 'make' creates the file libft.a, that archive can be included in other applications
+# Execute
+- the command `make` creates the file libft.a, that archive can be included in other applications
+- other make commands: `re`, `clean`, `fclean`
 
-# Info
-    42 project: LIBFT (https://cdn.intra.42.fr/pdf/pdf/73987/en.subject.pdf)
-    by: Francesco Aru, francesco.aru25@gmail.com, intra42/slack nickname: @faru, Codam, Amsterdam
+# References
+- 42 project: [Libft](https://cdn.intra.42.fr/pdf/pdf/73987/en.subject.pdf)
+- By: Francesco Aru, francesco.aru25@gmail.com, intra42/slack nickname: @faru, Codam, Amsterdam
