@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/03/23 16:24:59 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/30 01:53:41 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stddef.h>		// NULL, size_t type
 # include <stdlib.h>    	// malloc(), free()
 # include <unistd.h>    	// write(), read(), open(), close(), ...
-# include <fcntl.h>			// macro to open files (O_CREAT, O_WRONLY, O_RDONLY ..)
+# include <fcntl.h>			// macro to open files (O_CREAT, O_RDONLY ..)
 # include <stdint.h>		// cross-compiler types
 # include <limits.h>		// limits of types (INT_MAX, LONG_MAX, ...)
 # include <stdarg.h>		// variable number of arguments
@@ -201,7 +201,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 // @return void
 void	ft_bzero(void *ptr, size_t n_elem);
 
-// allocate space for n_elem elements of size_elem size, set every element to null ('\0)
+// allocate space for n_elem elements of size_elem size,
+// set every element to null ('\0)
 // @param n_elem	--> number of the elements to allocate
 // @param size_elem	--> size of every element
 //

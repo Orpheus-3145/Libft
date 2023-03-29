@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 05:52:23 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/20 03:54:02 by fra           ########   odam.nl         */
+/*   Updated: 2023/03/30 01:52:31 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #  define BUFFER_SIZE 42
 # endif
 
-
 // from a given file descriptor read a line (i.e. a sequence of characters 
 // beginning at the cursor position and ending before the first occurrence
 // of the character \n)
@@ -25,8 +24,8 @@
 //
 // return char* --> the line read, NULL if:
 //                      1) allocation fails;
-//                      2) file descriptor is invalid (file not esixistent or permission
-//                          issues) also prints it in stderr
+//                      2) file descriptor is invalid (file not esixistent or 
+//                          permission issues) also prints it in stderr
 //                      3) reached EOF
 // NB: the position of the cursor is not resetted when the fd is closed but EOF
 //      is not reached
