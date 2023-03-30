@@ -6,19 +6,20 @@ This library contains useful functions and structs for my projects, in fact is i
 - include/           => header files
 - objects/           => deposit for object files
 - sources/		(see include/*.h files for specific documentation)
-	- **characters**     => functions that check the type of the char received (digit, alphabetical, printable, ...)
 
-	- **ft_printf**     => implementation of the C function printf(), it handles the following placeholders: %c, %s, %p, %d ('+' and ' '), %i, %u, %x ('#'), %X ('#'), %%, NB: it relies directly on write system call
+	- **characters:** functions that check the type of the char received (digit, alphabetical, printable, ...)
 
-	- **get_next_line**  => implementation of a function that, given a file descriptor, prints, repeteadly, the lines of the relative file, NB: it relies directly on read system call
+	- **ft_printf:**  implementation of the C function printf(), it handles the following placeholders: %c, %s, %p, %d ('+' and ' '), %i, %u, %x ('#'), %X ('#'), %%, NB: it relies directly on write system call
 
-	- **lst**            => functions that manage basic operations on a linked list (see libft.h for definition of struct t_list)
+	- **get_next_line:**  implementation of a function that, given a file descriptor, prints, repeteadly, the lines of the relative file, NB: it relies directly on read system call
 
-	- **memory**         => some utility functions: implementation of calloc(), something useful to free the memory and exiting properly from a program managing the memory directly
+	- **lst:**  functions that manage basic operations on a linked list (see libft.h for definition of struct t_list)
 
-	- **numbers**        => managing numbers, convertions to int (dec/bin/hex), long or floats from string and vice versa, other random stuff for numbers
+	- **memory:**  some utility functions: implementation of calloc(), something useful to free the memory and exiting properly from a program managing the memory directly
 
-	- **strings**        => implementation both of std and custom function for managing strings
+	- **numbers:**  managing numbers, convertions to int (dec/bin/hex), long or floats from string and vice versa, other random stuff for numbers
+
+	- **strings:**  implementation both of std and custom function for managing strings
 
 
 # Execute
