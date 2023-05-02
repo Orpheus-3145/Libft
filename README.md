@@ -31,4 +31,4 @@ This library contains useful functions and structs for my projects, in fact is i
 
 # References
 - 42 project: [Libft](https://cdn.intra.42.fr/pdf/pdf/73987/en.subject.pdf)
-- By: Francesco Aru [GithHub](https://github.com/Orpheus-3145), francesco.aru25@gmail.com, intra42/slack nickname: @faru, Codam, Amsterdam
+- By: Francesco Aru ([GithHub](https://github.com/Orpheus-3145)), francesco.aru25@gmail.com, intra42/slack nickname: @faru, Codam, Amsterdam
