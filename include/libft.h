@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/03/30 01:53:41 by fra           ########   odam.nl         */
+/*   Updated: 2023/05/02 17:28:23 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdint.h>		// cross-compiler types
 # include <limits.h>		// limits of types (INT_MAX, LONG_MAX, ...)
 # include <stdarg.h>		// variable number of arguments
+# include <sys/time.h>		// gettimeofday(), timeval_t
 # include "get_next_line.h"
 # include "ft_printf.h"
 
@@ -130,6 +131,15 @@ size_t	ft_putendl_fd(char *string, int fd);
 //
 // @return size_t		--> the amount of chars successfully written
 size_t	ft_putnbr_fd(int a, int fd);
+
+// replicates the behaviour of the function usleep() except that the argument
+// in meant to be milliseconds, not microseconds (1 millisec = 1000 microsec)
+// it has bettere performances than usleep when that function is called
+// multiple times
+// @param milli_secs	--> amount of milliseconds to sleep
+//
+// return void
+void	ft_msleep(uint32_t milli_secs);
 
 // creates a new element (represented by the value pointed by content)
 // @param content	--> value of the new element if the linked list
