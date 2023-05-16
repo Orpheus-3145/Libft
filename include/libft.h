@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: fra <fra@student.42.fr>                      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/05/02 17:28:23 by faru          ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/09 15:17:04 by anonymous         #+#    #+#             */
+/*   Updated: 2023/05/16 19:28:55 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -415,6 +415,15 @@ char	*ft_xitoa(int a, int capital);
 //		tries to free it, also the function works if *str == NULL
 // NB: the function does MALLOC
 char	*ft_append_char(char to_add, char **str);
+
+
+// concatenates two strings
+// @param str1	--> first string
+// @param str2	--> second string
+//
+// @return char*	->> NULL if str1 = NULL and str2 = NULL 
+//						or if malloc fails, the joined string otherwise
+char    *ft_concat(char *str1, char *str2);
 
 // counts the occurence of the character to_find inside str
 // @param str		--> string to inspect
