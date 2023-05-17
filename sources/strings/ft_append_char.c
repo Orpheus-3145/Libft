@@ -6,34 +6,34 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 05:18:43 by fra           #+#    #+#                 */
-/*   Updated: 2023/02/11 00:12:32 by fra           ########   odam.nl         */
+/*   Updated: 2023/05/17 12:05:28 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_append_char(char to_add, char **str)
+char	*ft_append_char(char *str, char to_add)
 {
-	size_t	i;
-	size_t	length;
+	uint32_t	i;
+	uint32_t	length;
 	char	*tmp;
 
 	if (! to_add)
-		return (*str);
-	length = ft_strlen(*str);
+		return (str);
+	length = ft_strlen(str);
 	tmp = malloc((length + 2) * sizeof(char));
-	if (! tmp)
-		return (NULL);
-	i = 0;
-	while (str && i < length)
+	if (tmp)
 	{
-		tmp[i] = (*str)[i];
-		i++;
+		i = 0;
+		while (str && i < length)
+		{
+			tmp[i] = str[i];
+			i++;
+		}
+		tmp[i++] = to_add;
+		tmp[i] = '\0';
 	}
-	tmp[i++] = to_add;
-	tmp[i] = 0;
 	if (str)
-		free(*str);
-	*str = tmp;
-	return (*str);
+		free(str);
+	return (tmp);
 }

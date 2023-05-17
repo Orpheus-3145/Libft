@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 15:17:04 by anonymous         #+#    #+#             */
-/*   Updated: 2023/05/16 19:28:55 by fra              ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   libft.h                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: fra <fra@student.42.fr>                      +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
+/*   Updated: 2023/05/17 12:06:18 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -407,14 +407,14 @@ int		ft_xatoi(char *str);
 char	*ft_xitoa(int a, int capital);
 
 // attaches the character to_add to the string str
-// @param to_add	--> character to add
 // @param str		-->	is the pointer to the string to increase
+// @param to_add	--> character to add
 //
 // @return	char*	--> the new string
-// NB: the function assumes that *str is a dynamic pointer and at the end it
-//		tries to free it, also the function works if *str == NULL
+// NB: the function assumes that str is a dynamic pointer and at the end it
+//		tries to free it, also the function works if str == NULL
 // NB: the function does MALLOC
-char	*ft_append_char(char to_add, char **str);
+char	*ft_append_char(char *str, char to_add);
 
 
 // concatenates two strings
