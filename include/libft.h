@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/05/17 12:06:18 by faru          ########   odam.nl         */
+/*   Updated: 2023/05/17 13:03:09 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -558,5 +558,12 @@ char	*ft_strtrim(char const *str, char const *set);
 //
 // @return char*	--> the substring, NULL if non present or other errors
 char	*ft_substr(const char *str, unsigned int start, size_t length);
+
+// removes leading and trailing space characters, gives back the trimmed string
+// @param to_trim	--> string to trim
+//
+// @return char*	--> trimmed string
+// NB: does a malloc and frees the given string
+char	*ft_trim(char *to_trim);
 
 #endif
