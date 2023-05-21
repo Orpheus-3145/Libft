@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_strdup.c                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: faru <faru@student.codam.nl>                 +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/06 19:37:50 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/20 01:45:49 by fra           ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/06 19:37:50 by faru              #+#    #+#             */
+/*   Updated: 2023/05/21 23:35:05 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *str)
 	lenght_str = ft_strlen(str);
 	new_str = (char *) malloc((lenght_str + 1) * sizeof(char));
 	if (! new_str)
-		return (ft_raise_error("(ft_strdup) Memory error", 0));
+		return (NULL);
 	else
 	{
 		new_str[lenght_str] = '\0';

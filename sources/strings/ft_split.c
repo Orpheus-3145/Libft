@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_split.c                                         :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: fra <fra@student.42.fr>                      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/08 01:45:24 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/02/27 03:01:30 by fra           ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/08 01:45:24 by anonymous         #+#    #+#             */
+/*   Updated: 2023/05/21 22:44:53 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ char	**ft_split(char const *str, char split)
 	index = 0;
 	if (! str)
 		return (NULL);
-	matrix = malloc ((ft_n_substr(str, split) + 1) * sizeof(char *));
+	matrix = ft_calloc((ft_n_substr(str, split) + 1), sizeof(char *));
 	if (! matrix)
-		ft_raise_error("(ft_split) Memory error", 0);
+		return (NULL);
 	while (matrix && *str)
 	{
 		if (*str != split)
@@ -46,7 +46,5 @@ char	**ft_split(char const *str, char split)
 		}
 		str++;
 	}
-	if (matrix)
-		matrix[index] = 0;
 	return (matrix);
 }
