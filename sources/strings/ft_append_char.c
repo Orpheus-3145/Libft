@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_append_char.c                                   :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: fra <fra@student.codam.nl>                   +#+                     */
+/*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 05:18:43 by fra           #+#    #+#                 */
-/*   Updated: 2023/05/17 12:05:28 by faru          ########   odam.nl         */
+/*   Updated: 2023/05/23 18:19:35 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_append_char(char *str, char to_add)
 {
 	uint32_t	i;
 	uint32_t	length;
-	char	*tmp;
+	char		*tmp;
 
 	if (! to_add)
 		return (str);

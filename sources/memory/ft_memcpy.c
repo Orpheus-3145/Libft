@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_memcpy.c                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: faru <faru@student.codam.nl>                 +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/04 12:57:17 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/20 00:54:53 by fra           ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/04 12:57:17 by faru              #+#    #+#             */
+/*   Updated: 2023/05/21 21:41:08 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*new_src;
 	size_t		index;
 
+	if (! src)
+		return (dest);
 	new_dest = (char *) dest;
 	new_src = (const char *) src;
 	if (new_dest == new_src)

@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/05/22 18:58:12 by faru          ########   odam.nl         */
+/*   Updated: 2023/05/23 18:19:12 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -418,14 +418,13 @@ char	*ft_xitoa(int a, int capital);
 // NB: the function does MALLOC
 char	*ft_append_char(char *str, char to_add);
 
-
 // concatenates two strings
 // @param str1	--> first string
 // @param str2	--> second string
 //
 // @return char*	->> NULL if str1 = NULL and str2 = NULL 
 //						or if malloc fails, the joined string otherwise
-char    *ft_concat(char *str1, char *str2);
+char	*ft_concat(char *str1, char *str2);
 
 // counts the occurence of the character to_find inside str
 // @param str		--> string to inspect
