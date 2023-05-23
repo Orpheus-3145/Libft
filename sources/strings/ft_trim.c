@@ -6,13 +6,13 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 12:42:47 by faru          #+#    #+#                 */
-/*   Updated: 2023/05/17 15:49:46 by faru          ########   odam.nl         */
+/*   Updated: 2023/05/23 17:03:23 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_trim(char *to_trim)
+char	*ft_trim(char *to_trim, bool free_str)
 {
 	char	*trimmed;
 	int32_t	start;
@@ -29,16 +29,8 @@ char	*ft_trim(char *to_trim)
 		end--;
 	if ((start == 0) && (end == (int32_t) ft_strlen(to_trim) - 1))
 		return (to_trim);
-	trimmed = ft_calloc((end - start + 2), sizeof(char));
-	if (trimmed)
-	{
-		i = 0;
-		while (start + i <= end)
-		{
-			trimmed[i] = to_trim[start + i];
-			i++;
-		}
-	}
-	free(to_trim);
+	trimmed = ft_substr(to_trim, 0, end - start + 1);
+	if (free_str)
+		free(to_trim);
 	return (trimmed);
 }

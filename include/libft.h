@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/05/17 13:03:09 by faru          ########   odam.nl         */
+/*   Updated: 2023/05/22 18:58:12 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <limits.h>		// limits of types (INT_MAX, LONG_MAX, ...)
 # include <stdarg.h>		// variable number of arguments
 # include <sys/time.h>		// gettimeofday(), timeval_t
+# include <stdint.h>		// cross-compiler types
+# include <stdbool.h>		// boolean types
 # include "get_next_line.h"
 # include "ft_printf.h"
 
@@ -449,11 +451,12 @@ size_t	ft_n_substr(char const *str, char char_split);
 
 // splits str into an array of substrings separated by the separator split
 // @param str		--> string to split
-// @araam split		--> separator
+// @param split		--> separator
+// @param trim		--> remove starting and ending spaces
 //
 // @return	char**	--> se double pointer with the substrings
 // NB: the function does MALLOC
-char	**ft_split(char const *str, char split);
+char	**ft_split(char const *str, char split, bool trim);
 
 // checks if str_to_search contains to_find
 // @param str_to_search	--> the string to search
@@ -561,9 +564,10 @@ char	*ft_substr(const char *str, unsigned int start, size_t length);
 
 // removes leading and trailing space characters, gives back the trimmed string
 // @param to_trim	--> string to trim
+// @param free_str	--> if == true, frees the input string at the end
 //
 // @return char*	--> trimmed string
 // NB: does a malloc and frees the given string
-char	*ft_trim(char *to_trim);
+char	*ft_trim(char *to_trim, bool free_str);
 
 #endif
