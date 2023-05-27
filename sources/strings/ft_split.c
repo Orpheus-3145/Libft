@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_split.c                                         :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: fra <fra@student.42.fr>                      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/08 01:45:24 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/05/23 18:22:13 by faru          ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/08 01:45:24 by anonymous         #+#    #+#             */
+/*   Updated: 2023/05/27 02:27:30 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	**ft_split(char const *str, char split, bool trim)
 			if (trim)
 				sub_str = ft_trim(sub_str, false);
 			if (! sub_str)
-				return (ft_free_double((void ***) &matrix, index));
+				return (ft_free_double((void **) matrix, index));
 			matrix[index++] = sub_str;
 			str += ft_strlen(sub_str) - 1;
 		}

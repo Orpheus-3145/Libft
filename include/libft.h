@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: fra <fra@student.42.fr>                      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/05/23 18:19:12 by faru          ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/09 15:17:04 by anonymous         #+#    #+#             */
+/*   Updated: 2023/05/27 02:25:45 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,7 +229,7 @@ void	*ft_calloc(size_t n_elem, size_t size_elem);
 void	*ft_free_single(void **to_free);
 
 // frees the double pointer to_free and set that address to NULL
-// @param ***to_free	--> the address of the double pointer to free
+// @param **to_free	--> the address of the double pointer to free
 // @param n_arr			--> number of the elements of the double pointer
 //							if n_arr == -1 the the function assumes that the
 //							the double ptr is char** so it keeps iterating
@@ -237,7 +237,7 @@ void	*ft_free_single(void **to_free);
 //							n_arr single ptr is going to be freed
 //
 // return void*		--> always returns NULL for convenience
-void	*ft_free_double(void ***to_free, int n_arr);
+void	*ft_free_double(void **to_free, int n_arr);
 
 // checks if the next n characters of str_to_search contain to_find
 // @param str_to_search	--> the string to search
