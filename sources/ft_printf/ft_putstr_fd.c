@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_putstr_fd.c                                     :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/09 02:42:41 by anonymous     #+#    #+#                 */
-/*   Updated: 2022/10/11 12:26:25 by faru          ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/09 02:42:41 by anonymous         #+#    #+#             */
+/*   Updated: 2023/05/27 19:42:41 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
 #include"libft.h"
-#include<fcntl.h>
-//#include<stdio.h>
 
 size_t	ft_putstr_fd(char *str, int fd)
 {
@@ -24,19 +21,3 @@ size_t	ft_putstr_fd(char *str, int fd)
 	}
 	return (ft_strlen(str));
 }
-/*
-int main()
-{
-    int fd = open("test.txt", O_RDWR | O_CREAT);
-    printf("%d\n", fd);
-    if (fd == -1)
-        printf("Error!");
-    else
-    {
-		char *str = "I'm writing... ";
-        ft_putstr_fd(str, fd);
-        close(fd);
-    }
-    return (0);
-}
-*/

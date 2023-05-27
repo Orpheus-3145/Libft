@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_append_char.c                                   :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: fra <fra@student.42.fr>                      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/01/30 05:18:43 by fra           #+#    #+#                 */
-/*   Updated: 2023/05/23 18:19:35 by faru          ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_append_char.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/30 05:18:43 by fra               #+#    #+#             */
+/*   Updated: 2023/05/27 19:29:48 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_append_char(char *str, char to_add)
 	if (! to_add)
 		return (str);
 	length = ft_strlen(str);
-	tmp = malloc((length + 2) * sizeof(char));
+	tmp = ft_calloc((length + 2), sizeof(char));
 	if (tmp)
 	{
 		i = 0;
@@ -30,10 +30,8 @@ char	*ft_append_char(char *str, char to_add)
 			tmp[i] = str[i];
 			i++;
 		}
-		tmp[i++] = to_add;
-		tmp[i] = '\0';
+		tmp[i] = to_add;
 	}
-	if (str)
-		free(str);
+	ft_free(str);
 	return (tmp);
 }

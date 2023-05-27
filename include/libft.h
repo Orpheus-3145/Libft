@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:17:04 by anonymous         #+#    #+#             */
-/*   Updated: 2023/05/27 02:25:45 by fra              ###   ########.fr       */
+/*   Updated: 2023/05/27 19:46:48 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,12 +222,6 @@ void	ft_bzero(void *ptr, size_t n_elem);
 // NB: the function does MALLOC
 void	*ft_calloc(size_t n_elem, size_t size_elem);
 
-// free the single pointer to_free and set that address to NULL
-// @param **to_free	--> the address of the pointer to free
-//
-// return void*		--> always returns NULL for convenience
-void	*ft_free_single(void **to_free);
-
 // frees the double pointer to_free and set that address to NULL
 // @param **to_free	--> the address of the double pointer to free
 // @param n_arr			--> number of the elements of the double pointer
@@ -236,8 +230,14 @@ void	*ft_free_single(void **to_free);
 //							untill if finds a NULL ptr, if n_arr > 0 then only
 //							n_arr single ptr is going to be freed
 //
-// return void*		--> always returns NULL for convenience
+// @return void*		--> always returns NULL for convenience
 void	*ft_free_double(void **to_free, int n_arr);
+
+// wrapper of free(), frees the pointer only if is different from NULL
+// @param *ptr_to_free	--> ...
+//
+// @return void*		--> always returns NULL for convenience
+void	*ft_free(void *ptr_to_free);
 
 // checks if the next n characters of str_to_search contain to_find
 // @param str_to_search	--> the string to search
@@ -254,7 +254,7 @@ void	*ft_memchr(const void *str_to_search, int to_find, size_t n);
 // @param dst	--> second pointer
 // @param n		--> number of elements to check
 //
-// return int	--> 0 if they're the same, pos/neg number otherwise
+// @return int	--> 0 if they're the same, pos/neg number otherwise
 int		ft_memcmp(const void *src, const void *dst, size_t n);
 
 // copies up to n elements from src to dst
@@ -355,8 +355,8 @@ float	ft_fmod(float number);
 // @param number	--> number to inspect
 // @param base		--> representation (decimal, binary, octal , ...)
 //
-// @return long		--> absolute value of the number
-size_t	ft_nbrlen(size_t nbr, int base);
+// @return u. long	--> absolute value of the number
+size_t	ft_nbrlen(long nbr, int base);
 
 // finds the decimal part of the given number (i.e. i - [i])
 // @param		--> floating point to inspect
@@ -414,7 +414,7 @@ char	*ft_xitoa(int a, int capital);
 //
 // @return	char*	--> the new string
 // NB: the function assumes that str is a dynamic pointer and at the end it
-//		tries to free it, also the function works if str == NULL
+//		will free it, also the function works if str == NULL
 // NB: the function does MALLOC
 char	*ft_append_char(char *str, char to_add);
 
@@ -424,6 +424,8 @@ char	*ft_append_char(char *str, char to_add);
 //
 // @return char*	->> NULL if str1 = NULL and str2 = NULL 
 //						or if malloc fails, the joined string otherwise
+// NB: the function assumes that str1 and str2 are dynamic pointers and at the end it
+//		will free them, also the function works if str1 == NULL or str2 == NULL
 char	*ft_concat(char *str1, char *str2);
 
 // counts the occurence of the character to_find inside str
@@ -453,7 +455,7 @@ size_t	ft_n_substr(char const *str, char char_split);
 // @param split		--> separator
 // @param trim		--> remove starting and ending spaces
 //
-// @return	char**	--> se double pointer with the substrings
+// @return	char**	--> se double pointer with the substrings, NULL if str == NULL or mem fail
 // NB: the function does MALLOC
 char	**ft_split(char const *str, char split, bool trim);
 
@@ -565,8 +567,10 @@ char	*ft_substr(const char *str, unsigned int start, size_t length);
 // @param to_trim	--> string to trim
 // @param free_str	--> if == true, frees the input string at the end
 //
-// @return char*	--> trimmed string
-// NB: does a malloc and frees the given string
-char	*ft_trim(char *to_trim, bool free_str);
+// @return char*	--> trimmed string (NULL for NULL INPUT or mem fail)
+// NB: does a malloc
+// NB: the function assumes that to_trim is a dynamic pointer and at the end it
+//		will free it
+char	*ft_trim(char *to_trim);
 
 #endif

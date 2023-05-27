@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 19:37:50 by faru              #+#    #+#             */
-/*   Updated: 2023/05/21 23:35:05 by fra              ###   ########.fr       */
+/*   Updated: 2023/05/27 19:38:12 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ char	*ft_strdup(const char *str)
 	char	*new_str;
 
 	lenght_str = ft_strlen(str);
-	new_str = (char *) malloc((lenght_str + 1) * sizeof(char));
+	new_str = ft_calloc(lenght_str + 1, sizeof(char));
 	if (! new_str)
 		return (NULL);
 	else
 	{
-		new_str[lenght_str] = '\0';
 		while (lenght_str--)
 			new_str[lenght_str] = str[lenght_str];
 		return (new_str);

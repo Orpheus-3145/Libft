@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   get_next_line.c                                    :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: fra <fra@student.codam.nl>                   +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/02/23 05:50:00 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/20 03:47:22 by fra           ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/23 05:50:00 by fra               #+#    #+#             */
+/*   Updated: 2023/05/27 19:34:19 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*get_next_line(int fd)
 		}
 	}
 	ft_raise_error("(gnl) File doesn't exist or permission denied", 0);
-	return (ft_free_single((void **) &line));
+	return (ft_free(line));
 }
 
 char	*append_str(char *old, char *buffer)
@@ -51,18 +51,17 @@ char	*append_str(char *old, char *buffer)
 	while (old && old[len_old])
 		len_old++;
 	len_right = length_new_str(buffer);
-	new_str = (char *) malloc((len_old + len_right + 1) * sizeof(char));
+	new_str = ft_calloc((len_old + len_right + 1), sizeof(char));
 	if (! new_str)
 		ft_raise_error("(gnl) Memory error", 0);
 	else
 	{
-		new_str[len_old + len_right] = '\0';
 		while (len_right--)
 			new_str[len_old + len_right] = buffer[len_right];
 		while (len_old--)
 			new_str[len_old] = old[len_old];
 	}
-	ft_free_single((void **) &old);
+	ft_free(old);
 	return (new_str);
 }
 

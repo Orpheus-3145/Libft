@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 01:45:24 by anonymous         #+#    #+#             */
-/*   Updated: 2023/05/27 02:27:30 by fra              ###   ########.fr       */
+/*   Updated: 2023/05/27 19:39:20 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	**ft_split(char const *str, char split, bool trim)
 		{
 			sub_str = ft_substr(str, 0, len_substr(str, split));
 			if (trim)
-				sub_str = ft_trim(sub_str, false);
+				sub_str = ft_trim(sub_str);
 			if (! sub_str)
 				return (ft_free_double((void **) matrix, index));
 			matrix[index++] = sub_str;

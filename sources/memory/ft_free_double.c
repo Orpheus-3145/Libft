@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 22:18:30 by fra               #+#    #+#             */
-/*   Updated: 2023/05/27 02:25:17 by fra              ###   ########.fr       */
+/*   Updated: 2023/05/27 17:46:39 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ void	*ft_free_double(void **to_free, int n_arr)
 		{
 			tmp = (char **) to_free;
 			while (tmp[i])
-				free(tmp[i++]);
-			free(tmp[i]);
-			free(tmp);
+				ft_free(tmp[i++]);
+			ft_free(tmp[i]);
+			ft_free(tmp);
 		}
 		else
 		{
 			while (i < n_arr)
-				free(to_free[i++]);
-			free(to_free);
+				ft_free(to_free[i++]);
+			ft_free(to_free);
 		}
 	}
 	return (NULL);

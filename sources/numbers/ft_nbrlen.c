@@ -6,13 +6,13 @@
 /*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 22:34:09 by fra               #+#    #+#             */
-/*   Updated: 2023/01/18 22:34:10 by fra              ###   ########.fr       */
+/*   Updated: 2023/05/27 19:46:18 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_nbrlen(size_t nbr, int base)
+size_t	ft_nbrlen(long nbr, int base)
 {
 	size_t	cnt;
 

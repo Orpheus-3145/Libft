@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_strmapi.c                                       :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/14 13:28:31 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/03/06 04:53:52 by fra           ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/14 13:28:31 by anonymous         #+#    #+#             */
+/*   Updated: 2023/05/27 19:31:56 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 	if (! str || ! f)
 		return (NULL);
 	length = ft_strlen(str);
-	new_str = (char *) malloc(length + 1);
+	new_str = ft_calloc(length + 1, sizeof(char));
 	if (new_str == NULL)
 		return (NULL);
-	new_str[length] = '\0';
 	while (length--)
 		new_str[length] = f(length, str[length]);
 	return (new_str);

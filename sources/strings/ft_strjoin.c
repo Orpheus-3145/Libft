@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_strjoin.c                                       :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: faru <faru@student.codam.nl>                 +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/07 10:59:40 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/06 04:53:32 by fra           ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/07 10:59:40 by faru              #+#    #+#             */
+/*   Updated: 2023/05/27 19:31:16 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	join_str = (char *) malloc(s1_len + s2_len + 1);
+	join_str = ft_calloc(s1_len + s2_len + 1, sizeof(char));
 	if (! join_str)
 		return (NULL);
 	else
 	{
-		join_str[s1_len + s2_len] = '\0';
 		while (s2_len--)
 			join_str[s1_len + s2_len] = s2[s2_len];
 		while (s1_len--)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_xitoa.c                                         :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: fra <fra@student.42.fr>                      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/01/18 22:35:04 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/06 17:13:23 by faru          ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_xitoa.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/18 22:35:04 by fra               #+#    #+#             */
+/*   Updated: 2023/05/27 19:50:07 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,22 @@ char	*ft_xitoa(int n, int capital)
 	char	*base;
 
 	size = ft_nbrlen(n, 16);
-	str_nbr = (char *) malloc(size + 1);
-	if (! str_nbr)
-		return (NULL);
-	if (capital)
-		base = "0123456789ABCDEF";
-	else
-		base = "0123456789abcdef";
-	str_nbr[size--] = '\0';
-	if (! n)
-		str_nbr[size] = '0';
-	while (n)
+	str_nbr = ft_calloc(size + 1, sizeof(char));
+	if (str_nbr)
 	{
-		str_nbr[size--] = base[n % 16];
-		n /= 16;
+		if (capital)
+			base = "0123456789ABCDEF";
+		else
+			base = "0123456789abcdef";
+		if (n == 0)
+			str_nbr[0] = '0';
+		size--;
+		while (n)
+		{
+			str_nbr[size--] = base[n % 16];
+			n /= 16;
+		}
 	}
+		
 	return (str_nbr);
 }
