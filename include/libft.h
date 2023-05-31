@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 15:17:04 by anonymous         #+#    #+#             */
-/*   Updated: 2023/05/27 19:46:48 by fra              ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   libft.h                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: fra <fra@student.42.fr>                      +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
+/*   Updated: 2023/05/31 18:21:09 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -418,16 +418,6 @@ char	*ft_xitoa(int a, int capital);
 // NB: the function does MALLOC
 char	*ft_append_char(char *str, char to_add);
 
-// concatenates two strings
-// @param str1	--> first string
-// @param str2	--> second string
-//
-// @return char*	->> NULL if str1 = NULL and str2 = NULL 
-//						or if malloc fails, the joined string otherwise
-// NB: the function assumes that str1 and str2 are dynamic pointers and at the end it
-//		will free them, also the function works if str1 == NULL or str2 == NULL
-char	*ft_concat(char *str1, char *str2);
-
 // counts the occurence of the character to_find inside str
 // @param str		--> string to inspect
 // @param to_find	--> character to find
@@ -482,12 +472,14 @@ char	*ft_strdup(const char *str);
 void	ft_striteri(char *str, void (*f)(unsigned int, char*));
 
 //join the two string s1 and s2
-// @param s1	--> first string
-// @param ss	--> second string
+// @param s1			--> first string
+// @param ss			--> second string
+// @param join_chars	--> join sequence chars
+// @param free_stuff	--> if set to true, frees s1 and s2
 //
 // @return		--> the combined string s = s1 + s2
 // NB: the function does MALLOC
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2, const char *join_chars, bool free_stuff);
 
 // concatenate/append at most max_chars - len(src) - 1 characters from the
 // string src right after the last non-null char of dst
