@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_strjoin.c                                       :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: fra <fra@student.42.fr>                      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/10/07 10:59:40 by faru          #+#    #+#                 */
-/*   Updated: 2023/05/31 17:49:26 by faru          ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/07 10:59:40 by faru              #+#    #+#             */
+/*   Updated: 2023/05/31 23:02:06 by fra              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(char *s1, char *s2, const char *join_str, bool free_stuff)
 		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	tot_length = s1_len + s1_len + ft_strlen(joined) * (s1 != NULL);
+	tot_length = s1_len + s2_len + ft_strlen(join_str) * (s1 != NULL);
 	joined = ft_calloc(tot_length + 1, sizeof(char));
 	if (joined)
 	{
