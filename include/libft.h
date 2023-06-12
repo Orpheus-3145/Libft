@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/05/31 18:21:09 by faru          ########   odam.nl         */
+/*   Updated: 2023/06/11 15:50:56 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,14 +181,14 @@ int		ft_lstsize(t_list *lst);
 // @param del	--> the function to be applied to lst->content
 //
 // @return void
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstdelone(t_list *lst, void *(*del)(void *));
 
 // apply the function ft_lstdelone() to every element of the list
 // @param lst	--> the list to clear
 // @param del	--> the function to be applied to lst->content
 //
 // @return void
-void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void *(*del)(void *));
 
 // apply the function f() to every element of the list
 // @param lst	--> the list to clear
@@ -204,7 +204,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 //
 // @return t_list*	--> the new list with the f() function applied
 // NB: the function does MALLOC
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void *(*del)(void *));
 
 // cast ptr from void* into char* and set n_elem elements to null ('\0')
 // @param ptr		--> the void ptr to set to zero
@@ -431,6 +431,19 @@ int		ft_count_occ(char *str, char to_find);
 //
 // @return int	--> index of character value ins str, -1 if non existent
 int		ft_find_index(char *str, char value);
+
+// removes characer from position start to end of string old and replaces
+// them with string sub
+// @param old		--> old string to update
+// @param sub		--> new string to put in old
+// @param start		--> starting position
+// @param end		--> ending position
+//
+// @return char*	--> new string
+// NB: the function assumes that old is a dynamic pointer and at the end it
+//		will free it
+// NB: the function does MALLOC
+char	*ft_insert_str(char *old, char *sub, uint32_t start, uint32_t end);
 
 // count the number of substrings of str separated by char_split
 // @param str			--> string to inspect
