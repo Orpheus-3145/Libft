@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/06/11 15:50:56 by faru          ########   odam.nl         */
+/*   Updated: 2023/06/24 21:53:25 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,7 +188,7 @@ void	ft_lstdelone(t_list *lst, void *(*del)(void *));
 // @param del	--> the function to be applied to lst->content
 //
 // @return void
-void	ft_lstclear(t_list **lst, void *(*del)(void *));
+void	*ft_lstclear(t_list **lst, void *(*del)(void *));
 
 // apply the function f() to every element of the list
 // @param lst	--> the list to clear

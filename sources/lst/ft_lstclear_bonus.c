@@ -6,19 +6,19 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 03:05:44 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/06/04 16:38:03 by faru          ########   odam.nl         */
+/*   Updated: 2023/06/24 21:53:10 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_lstclear(t_list **lst, void *(*del)(void *))
+void	*ft_lstclear(t_list **lst, void *(*del)(void *))
 {
 	t_list	*next_to_drop;
 	t_list	*to_drop;
 
 	if (! lst || ! del || ! lst)
-		return ;
+		return (NULL);
 	to_drop = *lst;
 	while (to_drop)
 	{
@@ -27,4 +27,5 @@ void	ft_lstclear(t_list **lst, void *(*del)(void *))
 		to_drop = next_to_drop;
 	}
 	*lst = NULL;
+	return (NULL);
 }
