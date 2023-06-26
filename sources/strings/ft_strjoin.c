@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:59:40 by faru              #+#    #+#             */
-/*   Updated: 2023/05/31 23:02:06 by fra              ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_strjoin.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: fra <fra@student.42.fr>                      +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/07 10:59:40 by faru          #+#    #+#                 */
+/*   Updated: 2023/06/26 16:17:36 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ char	*ft_strjoin(char *s1, char *s2, const char *join_str, bool free_stuff)
 		ft_strlcpy(joined, s1, s1_len + 1);
 		if (s1)
 			ft_strlcpy(joined + s1_len, join_str, ft_strlen(join_str) + 1);
-		ft_strlcpy(joined + s1_len + ft_strlen(join_str) * (s1 != NULL), s2, s2_len + 1);
+		ft_strlcpy(joined + s1_len + ft_strlen(join_str) * \
+											(s1 != NULL), s2, s2_len + 1);
 	}
 	if (free_stuff)
 	{

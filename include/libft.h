@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/06/24 21:53:25 by fra           ########   odam.nl         */
+/*   Updated: 2023/06/26 16:15:36 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -458,7 +458,8 @@ size_t	ft_n_substr(char const *str, char char_split);
 // @param split		--> separator
 // @param trim		--> remove starting and ending spaces
 //
-// @return	char**	--> se double pointer with the substrings, NULL if str == NULL or mem fail
+// @return	char**	--> se double pointer with the substrings, NULL if 
+//						str == NULL or mem fail
 // NB: the function does MALLOC
 char	**ft_split(char const *str, char split, bool trim);
 
@@ -492,7 +493,7 @@ void	ft_striteri(char *str, void (*f)(unsigned int, char*));
 //
 // @return		--> the combined string s = s1 + s2
 // NB: the function does MALLOC
-char	*ft_strjoin(char *s1, char *s2, const char *join_chars, bool free_stuff);
+char	*ft_strjoin(char *s1, char *s2, const char *join_chars, bool free);
 
 // concatenate/append at most max_chars - len(src) - 1 characters from the
 // string src right after the last non-null char of dst
