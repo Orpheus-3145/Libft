@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/07/02 04:33:48 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/02 20:52:13 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -445,6 +445,12 @@ int		ft_find_index(char *str, char value);
 //		will free it
 // NB: the function does MALLOC
 char	*ft_insert_str(char *old, char *sub, uint32_t start, uint32_t end);
+
+// checks if a string is NULL, empty or has only spaces
+// @param to_check	--> string to inspect
+//
+// @return	bool	--> true/false
+bool	ft_is_empty_str(char	*to_check);
 
 // count the number of substrings of str separated by char_split
 // @param str			--> string to inspect
