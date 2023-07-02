@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/07/02 20:52:13 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/03 01:30:00 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -446,7 +446,7 @@ int		ft_find_index(char *str, char value);
 // NB: the function does MALLOC
 char	*ft_insert_str(char *old, char *sub, uint32_t start, uint32_t end);
 
-// checks if a string is NULL, empty or has only spaces
+// checks if a string is empty or has only spaces
 // @param to_check	--> string to inspect
 //
 // @return	bool	--> true/false
@@ -459,6 +459,13 @@ bool	ft_is_empty_str(char	*to_check);
 // @return size_t		--> number of substrings
 // NB: ft_n_substr("test|separate||strings|", '|') = 3
 size_t	ft_n_substr(char const *str, char char_split);
+
+// prints the double array of chars, and the prompt if != NULL
+// @param str		--> string to print
+// @param prompt	--> prompt to shouw before the line
+//
+// @return void
+void	ft_print_double(char **str, char *prompt);
 
 // splits str into an array of substrings separated by the separator split
 // @param str		--> string to split

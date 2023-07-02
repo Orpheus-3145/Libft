@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_is_empty_str.c                                  :+:    :+:            */
+/*   ft_print_double.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/07/02 20:50:26 by fra           #+#    #+#                 */
-/*   Updated: 2023/07/03 01:29:47 by fra           ########   odam.nl         */
+/*   Created: 2023/07/02 23:34:52 by fra           #+#    #+#                 */
+/*   Updated: 2023/07/02 23:58:12 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_is_empty_str(char	*to_check)
+void	ft_print_double(char **str, char *prompt)
 {
-	if (to_check == NULL)
-		return (false);
-	while (ft_isspace(*to_check))
-		to_check++;
-	return (*to_check == '\0');
+	while (str && *str)
+	{
+		if (prompt)
+			ft_printf("%s", prompt);
+		ft_printf("%s\n", *str++);
+	}
 }
