@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fra <fra@student.42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 05:50:00 by fra               #+#    #+#             */
-/*   Updated: 2023/05/27 19:34:19 by fra              ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   get_next_line.c                                    :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: fra <fra@student.42.fr>                      +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/02/23 05:50:00 by fra           #+#    #+#                 */
+/*   Updated: 2023/07/02 00:55:26 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*get_next_line(int fd)
 				return (line);
 		}
 	}
-	ft_raise_error("(gnl) File doesn't exist or permission denied", 0);
+	ft_raise_error("(gnl) file doesn't exist or permission denied", 0);
 	return (ft_free(line));
 }
 
@@ -53,7 +53,7 @@ char	*append_str(char *old, char *buffer)
 	len_right = length_new_str(buffer);
 	new_str = ft_calloc((len_old + len_right + 1), sizeof(char));
 	if (! new_str)
-		ft_raise_error("(gnl) Memory error", 0);
+		ft_raise_error("(gnl) memory error", 0);
 	else
 	{
 		while (len_right--)

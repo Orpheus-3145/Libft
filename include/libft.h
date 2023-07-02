@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/06/26 16:15:36 by faru          ########   odam.nl         */
+/*   Updated: 2023/07/02 04:33:48 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stddef.h>		// NULL, size_t type
 # include <stdlib.h>    	// malloc(), free()
+# include <stdio.h>					// printf(), perror(), strerror()
 # include <unistd.h>    	// write(), read(), open(), close(), ...
 # include <fcntl.h>			// macro to open files (O_CREAT, O_RDONLY ..)
 # include <stdint.h>		// cross-compiler types
