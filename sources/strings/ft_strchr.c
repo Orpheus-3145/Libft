@@ -6,7 +6,7 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 11:16:59 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/04 20:06:31 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/03 17:44:41 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,5 @@ char	*ft_strchr(const char *str_to_search, int to_find)
 			return ((char *) str_to_search);
 		str_to_search++;
 	}
-	if (uc_to_find == 0)
-		return ((char *) str_to_search);
-	else
-		return (NULL);
+	return (NULL);
 }
