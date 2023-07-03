@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 02:49:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/06/04 16:38:07 by faru          ########   odam.nl         */
+/*   Updated: 2023/07/04 00:23:44 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_lstdelone(t_list *lst, void *(*del)(void *))
 {
-	if (lst && del)
+	if (lst)
 	{
-		del(lst->content);
+		if (del)
+			del(lst->content);
 		ft_free(lst);
 	}
 }
