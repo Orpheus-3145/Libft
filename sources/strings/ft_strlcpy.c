@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 16:42:53 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/20 02:44:51 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/12 12:37:11 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t max_chars)
 {

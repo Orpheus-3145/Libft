@@ -6,11 +6,11 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/05 03:45:51 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/19 04:15:55 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/12 12:37:11 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 float	ft_atof(const char *str_n)
 {
