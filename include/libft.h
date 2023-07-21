@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/07/03 01:30:00 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/21 10:57:46 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -350,7 +350,7 @@ long	ft_mod(long number);
 // @param number	--> number to apply the module operator
 //
 // @return long		--> absolute value of the number
-float	ft_fmod(float number);
+float	ft_mod(float number);
 
 // finds the number of digits of the number written in the given base
 // @param number	--> number to inspect

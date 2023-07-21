@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_fmod.c                                          :+:    :+:            */
+/*   ft_mod.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-float	ft_fmod(float number)
+float	ft_mod(float number)
 {
 	if (number < 0)
 		number *= -1;
