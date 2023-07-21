@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/07/21 11:40:41 by faru          ########   odam.nl         */
+/*   Updated: 2023/07/21 23:09:56 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -379,7 +379,7 @@ float	ft_part_dec(float number);
 // @param		--> floating point to inspect
 //
 // @return		--> integer closest to number
-float	ft_part_int(float number);
+double	ft_part_int(double number);
 
 // rounds number to the closest integer
 // @param number	--> floating point to inspect
