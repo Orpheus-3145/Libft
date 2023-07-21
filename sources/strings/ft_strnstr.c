@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 19:44:45 by faru          #+#    #+#                 */
-/*   Updated: 2023/02/23 22:26:22 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/12 12:37:11 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, char *to_find, size_t len)
 {

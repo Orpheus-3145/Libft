@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_mod.c                                           :+:    :+:            */
+/*   ft_mod.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: faru <faru@student.codam.nl>                 +#+                     */
+/*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/27 19:20:26 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/20 03:57:00 by fra           ########   odam.nl         */
+/*   Created: 2023/03/20 01:13:36 by fra           #+#    #+#                 */
+/*   Updated: 2023/03/20 01:14:16 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_mod(long number)
+float	ft_mod(float number)
 {
 	if (number < 0)
 		number *= -1;

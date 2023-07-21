@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 17:45:38 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/06/08 14:30:34 by faru          ########   odam.nl         */
+/*   Updated: 2023/07/12 12:37:51 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void *(*del)(void *))
 		{
 			ft_lstadd_back(&new_lst, new_obj);
 			lst = lst->next;
-		}	
+		}
 	}
 	return (new_lst);
 }

@@ -6,23 +6,27 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
+<<<<<<< HEAD
 /*   Updated: 2023/07/21 10:57:46 by faru          ########   odam.nl         */
+=======
+/*   Updated: 2023/07/12 12:27:15 by faru          ########   odam.nl         */
+>>>>>>> 3e69db87048b0fff3e2b4bf4504a5f11a36d4679
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>		// NULL, size_t type
-# include <stdlib.h>    	// malloc(), free()
-# include <stdio.h>					// printf(), perror(), strerror()
-# include <unistd.h>    	// write(), read(), open(), close(), ...
-# include <fcntl.h>			// macro to open files (O_CREAT, O_RDONLY ..)
-# include <stdint.h>		// cross-compiler types
-# include <limits.h>		// limits of types (INT_MAX, LONG_MAX, ...)
-# include <stdarg.h>		// variable number of arguments
-# include <sys/time.h>		// gettimeofday(), timeval_t
-# include <stdint.h>		// cross-compiler types
-# include <stdbool.h>		// boolean types
+# include <stddef.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdint.h>
+# include <limits.h>
+# include <stdarg.h>
+# include <sys/time.h>
+# include <stdint.h>
+# include <stdbool.h>
 # include "get_next_line.h"
 # include "ft_printf.h"
 
