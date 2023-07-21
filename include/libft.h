@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/07/21 23:09:56 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/21 23:13:19 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -373,7 +373,7 @@ size_t	ft_nbrlen(long nbr, int base);
 // @param		--> floating point to inspect
 //
 // @return		--> decimal part of number
-float	ft_part_dec(float number);
+double	ft_part_dec(double number);
 
 // finds the whole part of the given number (i.e. [i] or floor(i))
 // @param		--> floating point to inspect
@@ -391,13 +391,13 @@ int		ft_round_to_int(double number);
 // @param base		--> number to power
 // @param exp		--> number to elevate base
 //
-// @return float	--> base^exp
-float	ft_pow(int base, int exp);
+// @return double	--> base^exp
+double	ft_pow(int base, int exp);
 
-// returns the float representation of the string str (hexadecimal)
-// @param str		--> the hexadecimal number to convert into float
+// returns the double representation of the string str (hexadecimal)
+// @param str		--> the hexadecimal number to convert into double
 //
-// @return float	--> the float number that represents the string
+// @return double	--> the double number that represents the string
 // NB: works both with dot of comma, also with - or + signs, ignores characters
 //		'0x' both at the start of the string or after the comma/dot (works with
 //		0x13.34 and also with 13.0x34)
