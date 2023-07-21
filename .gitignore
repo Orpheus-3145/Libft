@@ -1,4 +1,6 @@
-objects/*
-main.*
-a.*
+*.o
 *.a
+*.out
+.vscode
+.DS_Store
+.idea*

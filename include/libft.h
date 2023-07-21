@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/07/21 11:03:53 by faru          ########   odam.nl         */
+/*   Updated: 2023/07/21 11:40:41 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@
 # include <stdbool.h>
 # include "get_next_line.h"
 # include "ft_printf.h"
+
+// shorter
+typedef struct timeval	t_timeval;
 
 // implementation of a linked list
 // @param content	--> void pointer to content of the node
@@ -134,6 +137,13 @@ size_t	ft_putendl_fd(char *string, int fd);
 //
 // @return size_t		--> the amount of chars successfully written
 size_t	ft_putnbr_fd(int a, int fd);
+
+// gives the difference in milliseconds between the two timestamps
+// @param t1	--> starting time
+// @param t2	--> ending time
+//
+// @return		--> delta(t2 - t1)
+long	ft_delta_time(t_timeval t1, t_timeval t2);
 
 // replicates the behaviour of the function usleep() except that the argument
 // in meant to be milliseconds, not microseconds (1 millisec = 1000 microsec)
