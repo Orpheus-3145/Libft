@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/07/21 23:13:19 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/23 15:33:43 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ size_t	ft_putnbr_fd(int a, int fd);
 // @param t2	--> ending time
 //
 // @return		--> delta(t2 - t1)
-long	ft_delta_time(t_timeval t1, t_timeval t2);
+double	ft_delta_time(t_timeval t1, t_timeval t2);
 
 // replicates the behaviour of the function usleep() except that the argument
 // in meant to be milliseconds, not microseconds (1 millisec = 1000 microsec)
@@ -378,14 +378,14 @@ double	ft_part_dec(double number);
 // finds the whole part of the given number (i.e. [i] or floor(i))
 // @param		--> floating point to inspect
 //
-// @return		--> integer closest to number
-double	ft_part_int(double number);
+// @return		--> long closest to number
+long	ft_part_int(double number);
 
 // rounds number to the closest integer
 // @param number	--> floating point to inspect
 //
 // @return	int		--> rounded number
-int		ft_round_to_int(double number);
+long		ft_round_to_int(double number);
 
 // applies the power exp to the number base
 // @param base		--> number to power

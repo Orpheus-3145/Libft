@@ -6,13 +6,13 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/12 05:17:11 by fra           #+#    #+#                 */
-/*   Updated: 2023/03/12 06:06:24 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/23 15:33:38 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_round_to_int(double number)
+long	ft_round_to_int(double number)
 {
 	int		sign;
 	long	tmp;
