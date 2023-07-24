@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/07/23 15:33:43 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/25 00:34:35 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,15 @@ size_t	ft_putendl_fd(char *string, int fd);
 //
 // @return size_t		--> the amount of chars successfully written
 size_t	ft_putnbr_fd(int a, int fd);
+
+// checks if the file given exists and is accessible with the given mode, if
+// ext_name != NULL checks that the extension name is the same
+// @param file_name	-->	path to the file to check
+// @param mode		--> opening mode (O_WRONLY, ...)
+// @param ext_name	--> extension to check (optional)
+//
+// return true/false
+bool	ft_check_file(char *file_name, int32_t mode, char *ext_name);
 
 // gives the difference in milliseconds between the two timestamps
 // @param t1	--> starting time
