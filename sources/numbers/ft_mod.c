@@ -6,13 +6,13 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/21 11:03:21 by faru          #+#    #+#                 */
-/*   Updated: 2023/07/21 11:03:40 by faru          ########   odam.nl         */
+/*   Updated: 2023/07/25 21:04:30 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_mod(long number)
+unsigned long	ft_mod(long number)
 {
 	if (number < 0)
 		number *= -1;

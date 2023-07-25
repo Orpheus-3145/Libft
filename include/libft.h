@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/07/25 00:34:35 by fra           ########   odam.nl         */
+/*   Updated: 2023/07/25 21:04:42 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -363,7 +363,7 @@ char	*ft_litoa(long number);
 // @param number	--> number to apply the module operator
 //
 // @return long		--> absolute value of the number
-long	ft_mod(long number);
+unsigned long	ft_mod(long number);
 
 // finds the absolute value of the given number (float)
 // @param number	--> number to apply the module operator
