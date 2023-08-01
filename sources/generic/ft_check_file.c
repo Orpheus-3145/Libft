@@ -6,13 +6,13 @@
 /*   By: fra <fra@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/25 00:29:45 by fra           #+#    #+#                 */
-/*   Updated: 2023/07/25 00:32:22 by fra           ########   odam.nl         */
+/*   Updated: 2023/08/01 18:19:26 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool ft_check_file(char *file_name, int32_t mode, char *ext_name)
+bool	ft_check_file(char *file_name, int32_t mode, char *ext_name)
 {
 	int32_t		fd;
 	uint32_t	len_ext;
