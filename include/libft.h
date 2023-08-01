@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 15:17:04 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/07/25 21:04:42 by fra           ########   odam.nl         */
+/*   Updated: 2023/08/01 18:18:49 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -363,7 +363,7 @@ char	*ft_litoa(long number);
 // @param number	--> number to apply the module operator
 //
 // @return long		--> absolute value of the number
-unsigned long	ft_mod(long number);
+size_t	ft_mod(long number);
 
 // finds the absolute value of the given number (float)
 // @param number	--> number to apply the module operator
@@ -394,7 +394,7 @@ long	ft_part_int(double number);
 // @param number	--> floating point to inspect
 //
 // @return	int		--> rounded number
-long		ft_round_to_int(double number);
+long	ft_round_to_int(double number);
 
 // applies the power exp to the number base
 // @param base		--> number to power
