@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.42.fr>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 15:36:19 by faru          #+#    #+#                 */
-/*   Updated: 2023/03/04 19:40:12 by fra           ########   odam.nl         */
+/*   Updated: 2023/09/21 12:55:57 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

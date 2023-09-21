@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 11:17:44 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/17 19:44:11 by faru          ########   odam.nl         */
+/*   Updated: 2023/09/21 12:58:18 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 char	*ft_strrchr(const char *str_to_search, int to_find)
 {

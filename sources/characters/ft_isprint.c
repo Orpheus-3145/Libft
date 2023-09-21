@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 17:23:05 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/16 17:12:55 by faru          ########   odam.nl         */
+/*   Updated: 2023/09/21 12:56:09 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_isprint(int character)
 {

@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 12:00:19 by faru          #+#    #+#                 */
-/*   Updated: 2023/02/11 00:12:39 by fra           ########   odam.nl         */
+/*   Updated: 2023/09/21 12:58:18 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.42.fr>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 15:56:08 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/05 13:59:43 by faru          ########   odam.nl         */
+/*   Updated: 2023/09/21 12:55:54 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_isascii(int to_check)
 {

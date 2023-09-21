@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 11:11:57 by faru          #+#    #+#                 */
-/*   Updated: 2022/10/12 11:53:17 by faru          ########   odam.nl         */
+/*   Updated: 2023/09/21 12:56:25 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_toupper(int to_up)
 {

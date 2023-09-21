@@ -6,11 +6,11 @@
 /*   By: faru <faru@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 11:16:02 by faru          #+#    #+#                 */
-/*   Updated: 2023/02/22 23:57:57 by fra           ########   odam.nl         */
+/*   Updated: 2023/09/21 12:56:14 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_tolower(int to_low)
 {

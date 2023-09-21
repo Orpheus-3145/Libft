@@ -6,11 +6,11 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/30 16:12:33 by faru          #+#    #+#                 */
-/*   Updated: 2023/02/11 00:17:24 by fra           ########   odam.nl         */
+/*   Updated: 2023/09/21 12:58:18 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 long	ft_atol(const char *str)
 {

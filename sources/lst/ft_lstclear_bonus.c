@@ -6,11 +6,11 @@
 /*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 03:05:44 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/06/24 21:53:10 by fra           ########   odam.nl         */
+/*   Updated: 2023/09/21 12:57:16 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 void	*ft_lstclear(t_list **lst, void *(*del)(void *))
 {
