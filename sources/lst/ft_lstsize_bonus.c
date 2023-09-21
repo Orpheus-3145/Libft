@@ -6,11 +6,15 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 02:09:55 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/09/21 13:08:59 by faru          ########   odam.nl         */
+/*   Updated: 2023/09/21 13:13:22 by faru          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_lstsize(t_list *lst)
+{
+	int	cnt;
 
 	if (lst)
 		cnt = 1;
