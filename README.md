@@ -1,4 +1,4 @@
-# Lifbt
+# Libft
 This library contains useful functions and structs for my projects, in fact is included in most of them. It is a work in constant evolution because is enriched every time I finish a new project
 
 
