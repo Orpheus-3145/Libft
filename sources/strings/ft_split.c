@@ -6,7 +6,7 @@
 /*   By: fra <fra@student.42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/08 01:45:24 by anonymous     #+#    #+#                 */
-/*   Updated: 2023/09/21 13:09:29 by faru          ########   odam.nl         */
+/*   Updated: 2023/10/29 17:36:44 by fra           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ char	**ft_split(char const *str, char split, bool trim)
 			sub_str = ft_substr(str, 0, len_substr(str, split));
 			if (trim)
 				sub_str = ft_trim(sub_str);
-			if (! sub_str)
-				return (ft_free_double((void **) matrix, index));
+			if (sub_str == NULL)
+				return (ft_free_double((void **) matrix, index + 1));
 			matrix[index++] = sub_str;
 			str += ft_strlen(sub_str) - 1;
 		}
